@@ -1,0 +1,143 @@
+<?page title="Modificacion..."?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
+<zk xmlns:n="http://www.w3.org/1999/xhtml">
+	<window id="win" title="Actualizar informacion del taxi..."
+		width="100%" border="normal" apply="Controlador.EventController">
+		<panel id="panel" title="Editar informacion de Usuario..."
+			framable="true" width="100%" maximizable="true" minimizable="false"
+			border="normal" collapsible="true" closable="false"
+			onClose='alert("Panel is closed");'
+			onMinimize='alert("Panel is minimized");'>
+			<panelchildren>
+				<listbox id="box" multiple="true" rows="9"
+					model="@{win$composer.allEvents, load-after='update.onClick'}"
+					selectedItem="@{win$composer.current}" vflex="true">
+					<listhead>
+						<listheader label="Cedula" width="90px" />
+						<listheader label="N_Placa_vehiculo"
+							width="130px" />
+						<listheader label="Nombres" width="130px" />
+						<listheader label="Apelllidos" width="90px" />
+						<listheader label="Licencia" width="140px" />
+						<listheader label="Direccion" width="90px" />
+						<listheader label="Telefono" width="90px" />
+						<listheader label="Fecha de Nacimiento"
+							width="130px" />
+
+					</listhead>
+					<listitem self="@{each='event'}" value="@{event}">
+						<listcell label="@{event.n_cedula_tax}" />
+						<listcell label="@{event.n_matricula}" />
+						<listcell label="@{event.nombres}" />
+						<listcell label="@{event.apellidos}" />
+						<listcell label="@{event.licencia}" />
+						<listcell label="@{event.direccion}" />
+						<listcell label="@{event.telefono}" />
+						<listcell label="@{event.fecha_nacimiento}" />
+					</listitem>
+				</listbox>
+
+			</panelchildren>
+		</panel>
+		<hbox>
+			<groupbox>
+				<n:br />
+				<caption label="..." />
+				<textbox id="textbox2" cols="20" readonly="true" />
+				<n:br />
+				<textbox id="textbox3" cols="20" readonly="true" />
+				<n:br />
+				<textbox id="textbox4" cols="20" readonly="true" />
+				<n:br />
+				<textbox id="textbox5" cols="20" readonly="true" />
+				<n:br />
+				<textbox id="textbox6" cols="20" readonly="true" />
+				<n:br />
+				<textbox id="textbox7" cols="20" readonly="true" />
+				<n:br />
+				<textbox id="textbox8" cols="20" readonly="true" />
+				<n:br />
+				<space />
+			</groupbox>
+			<groupbox>
+				<n:br />
+				<caption label="Ingrese Datos..." />
+				Cedula:1316972577
+				<n:br />
+				<intbox id="n_cedula_tax" cols="25"
+					value="@{win$composer.current.n_cedula_tax}" readonly="true" />
+				<n:br />
+				Numero de Placa: XXX####
+				<n:br />
+				<textbox id="n_matricula" cols="25"
+					value="@{win$composer.current.n_matricula}" readonly="true" />
+				<n:br />
+				Nombres: Nombre1 Nombre2
+				<n:br />
+				<textbox id="nombres" cols="25"
+					value="@{win$composer.current.nombres}" />
+				<n:br />
+				Apellidos: Apellido1 Apellido2
+				<n:br />
+				<textbox id="apellidos" cols="25"
+					value="@{win$composer.current.apellidos}" />
+				<n:br />
+				<space />
+			</groupbox>
+			<groupbox>
+				<n:br />
+				<caption label="Otros datos.." />
+				Licencia: XXXXXXXXX
+				<n:br />
+				<intbox id="licencia" cols="25"
+					value="@{win$composer.current.licencia}" />
+				<n:br />
+				Direccion: XXXXXXXX
+				<n:br />
+				<textbox id="direccion" cols="25"
+					value="@{win$composer.current.direccion}" />
+				<n:br />
+				Telefono: XXXXXXXXXX
+				<n:br />
+				<textbox id="telefono" cols="25"
+					value="@{win$composer.current.telefono}" />
+				<n:br />
+				Fecha de Nacimiento: AAAA-MM-DD
+				<n:br />
+				<textbox id="fecha_nacimiento" cols="25"
+					value="@{win$composer.current.fecha_nacimiento}" />
+				<n:br />
+				<n:br />
+				<space />
+			</groupbox>
+			<groupbox>
+				<n:br />
+				<caption label="..." />
+				<textbox id="textbox9" cols="20" readonly="true" />
+				<n:br />
+				<textbox id="textbox10" cols="20" readonly="true" />
+				<n:br />
+				<textbox id="textbox11" cols="20" readonly="true" />
+				<n:br />
+				<textbox id="textbox12" cols="20" readonly="true" />
+				<n:br />
+				<textbox id="textbox13" cols="20" readonly="true" />
+				<n:br />
+				<textbox id="textbox14" cols="20" readonly="true" />
+				<n:br />
+				<textbox id="textbox15" cols="20" readonly="true" />
+				<n:br />
+				<space />
+			</groupbox>
+
+		</hbox>
+		<groupbox>
+			<caption label="Opciones..." />
+			<button id="update" label="Actualizar" width="46px"
+				height="24px" />
+			<button id="Volver" label="Volver.." href="index.zul"
+				width="46px" height="24px" />
+
+		</groupbox>
+	</window>
+</zk>

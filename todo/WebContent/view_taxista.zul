@@ -1,0 +1,44 @@
+<zk xmlns:n="http://www.w3.org/1999/xhtml">
+	<?page title="Pagina"?>
+	<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
+	<window id="win"  width="100%" height="100%" border="false" apply="Controlador.EventController, Controlador.VehiculoController">
+
+
+		<panel id="panel3" title="Taxistas..." framable="true"
+			width="100%" maximizable="false" minimizable="false" border="normal"
+			collapsible="true" closable="true"
+			onClose='alert("Panel is closed");'
+			onMinimize='alert("Panel is minimized");'>
+			<panelchildren>
+				<listbox id="box" multiple="true" rows="9"
+					model="@{win$composer.allEvents}"
+					selectedItem="@{win$composer.current}" vflex="true">
+					<listhead>
+						<listheader label="Cedula" width="90px" />
+						<listheader label="N_Placa_vehiculo"
+							width="130px" />
+						<listheader label="Nombres" width="130px" />
+						<listheader label="Apelllidos" width="90px" />
+						<listheader label="Licencia" width="140px" />
+						<listheader label="Direccion" width="90px" />
+						<listheader label="Telefono" width="90px" />
+						<listheader label="Fecha de Nacimiento"
+							width="130px" />
+
+					</listhead>
+					<listitem self="@{each='event'}" value="@{event}">
+						<listcell label="@{event.n_cedula_tax}" />
+						<listcell label="@{event.n_matricula}" />
+						<listcell label="@{event.nombres}" />
+						<listcell label="@{event.apellidos}" />
+						<listcell label="@{event.licencia}" />
+						<listcell label="@{event.direccion}" />
+						<listcell label="@{event.telefono}" />
+						<listcell label="@{event.fecha_nacimiento}" />
+					</listitem>
+				</listbox>
+			</panelchildren>
+		</panel>
+		
+	</window>
+</zk>

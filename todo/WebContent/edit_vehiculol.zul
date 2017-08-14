@@ -1,0 +1,46 @@
+<?page title="Modificacion..."?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
+<zk xmlns:n="http://www.w3.org/1999/xhtml">
+	<window id="win" title=".............." width="100%" border="normal" apply="Controlador.VehiculoController">
+		<panel id="panel" title="Editar informacion de vehiculo..."	framable="true" width="100%" maximizable="true" minimizable="false" border="normal" collapsible="true" closable="false"><panelchildren>
+				<listbox id="box" multiple="true" rows="8" model="@{win$composer.allVehiculos, load-after='update.onClick'}" selectedItem="@{win$composer.datove}" vflex="true">
+					<listhead>
+						<listheader label="N_matricula" width="90px" />
+						<listheader label="Marca" width="90px" />
+						<listheader label="Modelo" width="90px" />
+						<listheader label="Descripcion" width="200px" />
+					</listhead>
+					<listitem self="@{each='vehiculo'}" value="@{vehiculo}">
+						<listcell label="@{vehiculo.n_matricula}" />
+						<listcell label="@{vehiculo.marca}" />
+						<listcell label="@{vehiculo.modelo}" />
+						<listcell label="@{vehiculo.descripcion}" />
+					</listitem>
+				</listbox>
+			</panelchildren></panel>
+		<hbox><groupbox><n:br />
+				<caption label="Datos..." />
+				Numero de Placa:
+				<n:br />
+				<textbox id="n_matricula" cols="25"
+					value="@{win$composer.datove.n_matricula}" readonly = "true"/><n:br />
+				Marca:
+				<n:br />
+				<textbox id="marca" cols="25"
+					value="@{win$composer.datove.marca}" readonly = "true"/><n:br />
+				Modelo:
+				<n:br />
+				<textbox id="modelo" cols="25"
+					value="@{win$composer.datove.modelo}" readonly = "true"/><n:br />
+				Descripcion:
+				<n:br />
+				<textbox id="descripcion" cols="25"
+					value="@{win$composer.datove.descripcion}" /><n:br /><n:br />
+			</groupbox>
+			</hbox>
+			<groupbox><caption label="Opciones..." />
+				<button id="update" label="Actualizar" width="46px" height="24px" />
+				<button id="Volver" label="Volver.." href="index.zul" width="46px" height="24px" />
+			</groupbox>
+	</window>
+</zk>

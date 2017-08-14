@@ -1,0 +1,31 @@
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
+<zk xmlns:n="http://www.w3.org/1999/xhtml">
+	<window id="win" position="center"
+		width="100%" border="fale" apply="Controlador.VehiculoController">
+		<panel id="panel2" title="Informacion de Vehiculos"
+			framable="true" width="100%" maximizable="true" minimizable="false"
+			border="normal" collapsible="true" closable="false"
+			onClose='alert("Panel is closed");'
+			onMinimize='alert("Panel is minimized");'>
+			<panelchildren>
+				<listbox id="box1" multiple="true" rows="8"
+					model="@{win$composer.allVehiculos}"
+					selectedItem="@{win$composer.datove}" vflex="true">
+					<listhead>
+						<listheader label="N_matricula" width="90px" />
+						<listheader label="Marca" width="90px" />
+						<listheader label="Modelo" width="90px" />
+						<listheader label="Descripcion" width="200px" />
+					</listhead>
+					<listitem self="@{each='vehiculo'}"
+						value="@{vehiculo}">
+						<listcell label="@{vehiculo.n_matricula}" />
+						<listcell label="@{vehiculo.marca}" />
+						<listcell label="@{vehiculo.modelo}" />
+						<listcell label="@{vehiculo.descripcion}" />
+					</listitem>
+				</listbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

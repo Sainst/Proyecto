@@ -1,0 +1,122 @@
+<?page title="Pagina"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
+<zk xmlns:n="http://www.w3.org/1999/xhtml">
+	<space />
+	<window id="win" title="..............." width="100%"
+		border="normal" apply="Controlador.FrecuenceController">
+
+		<panel id="panel" title="Cancelar Pago..." framable="true"
+			width="100%" maximizable="true" minimizable="false" border="normal"
+			collapsible="true" closable="false"
+			onClose='alert("Panel is closed");'
+			onMinimize='alert("Panel is minimized");'>
+			<panelchildren>
+				<space />
+				<hbox>
+					<!-- 					<groupbox> -->
+					<!-- 						<n:br /> -->
+					<!-- 						<caption label="..." /> -->
+					<!-- 						<textbox id="textbox2" cols="20" -->
+					<!-- 							readonly="true" /> -->
+					<!-- 						<n:br /> -->
+					<!-- 						<textbox id="textbox3" cols="20" -->
+					<!-- 							readonly="true" /> -->
+					<!-- 						<n:br /> -->
+					<!-- 						<textbox id="textbox4" cols="20" -->
+					<!-- 							readonly="true" /> -->
+					<!-- 						<n:br /> -->
+					<!-- 						<textbox id="textbox5" cols="20" -->
+					<!-- 							readonly="true" /> -->
+					<!-- 						<n:br /> -->
+					<!-- 						<textbox id="textbox6" cols="20" -->
+					<!-- 							readonly="true" /> -->
+					<!-- 						<n:br /> -->
+					<!-- 						<textbox id="textbox7" cols="20" -->
+					<!-- 							readonly="true" /> -->
+					<!-- 						<n:br /> -->
+					<!-- 						<textbox id="textbox8" cols="20" -->
+					<!-- 							readonly="true" /> -->
+					<!-- 						<n:br /> -->
+					<!-- 						<space /> -->
+					<!-- 					</groupbox> -->
+					<image id="image" src="img/calendari.png"
+						width="250px" />
+
+					<groupbox>
+						<n:br />
+						<caption label="Informacion Emisor de Pago..." />
+						Registro #: ej: AAMMDDXXXX : 170608001
+						<n:br />
+						<intbox id="id_pago" cols="25"
+							value="@{win$composer.datofrc.id_pago}" />
+						<n:br />
+						Cedula Taxista: XXXXXXXXXX
+						<n:br />
+						<textbox id="n_cedula_tax" cols="25"
+							value="@{win$composer.datofrc.n_cedula_tax}" />
+						<n:br />
+						Fecha: AAAA-MM-DD
+						<n:br />
+						<textbox id="fecha" cols="25"
+							value="@{win$composer.datofrc.fecha}" />
+						<n:br />
+						Cancelado?: Cancelo - Sin_Pago
+						<n:br />
+						<textbox id="estado" cols="25"
+							value="@{win$composer.datofrc.estado}" />
+						<n:br />
+						Monto a cancelar?: 2$
+						<n:br />
+						<intbox id="valor_cancelado" cols="25"
+							value="@{win$composer.datofrc.valor_cancelado}" />
+						<n:br />
+						<space />
+					</groupbox>
+					<iframe id="iframe1" src="view_taxista.zul"
+						width="780px" height="200px" style="border: 0px solid gray" />
+				</hbox>
+				<space />
+			</panelchildren>
+		</panel>
+		<space />
+		<groupbox>
+			<caption label="Opciones..." />
+			<button id="add" label="Agregar" width="36px" height="24px" />
+			<button id="update" label="Actualizar" width="46px"
+				height="24px" disabled="true" />
+			<button id="Volver" label="Volver.." href="index.zul"
+				width="46px" height="24px" />
+		</groupbox>
+		<space />
+		<panel id="panel2" title="Informacion de Pagos Registrados..."
+			framable="true" width="100%" maximizable="true" minimizable="false"
+			border="normal" collapsible="true" closable="false"
+			onClose='alert("Panel is closed");'
+			onMinimize='alert("Panel is minimized");'>
+			<panelchildren>
+				<listbox id="box" multiple="true" rows="8"
+					model="@{win$composer.allFrecuences}"
+					selectedItem="@{win$composer.datofrc}" vflex="true">
+					<listhead>
+						<listheader label="Numero de Registro"
+							width="90px" />
+						<listheader label="Identificacion"
+							width="130px" />
+						<listheader label="Fecha de pago" width="130px" />
+						<listheader label="Estado" width="90px" />
+						<listheader label="Valor Cancelado"
+							width="140px" />
+					</listhead>
+					<listitem self="@{each='datofrc'}"
+						value="@{datofrc}">
+						<listcell label="@{datofrc.id_pago}" />
+						<listcell label="@{datofrc.n_cedula_tax}" />
+						<listcell label="@{datofrc.fecha}" />
+						<listcell label="@{datofrc.estado}" />
+						<listcell label="@{datofrc.valor_cancelado}" />
+					</listitem>
+				</listbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

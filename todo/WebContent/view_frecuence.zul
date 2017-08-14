@@ -1,0 +1,37 @@
+<?page title="Pagina"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
+<zk xmlns:n="http://www.w3.org/1999/xhtml">
+	<window id="win" width="100%"
+		border="false" apply="Controlador.FrecuenceController">
+		<panel id="panel2" title="Vista - Taxistas_Pagos..."
+			framable="true" width="100%" maximizable="true" minimizable="false"
+			border="normal" collapsible="true" closable="false"
+			onClose='alert("Panel is closed");'
+			onMinimize='alert("Panel is minimized");'>
+			<panelchildren>
+				<listbox id="box" multiple="true" rows="8"
+					model="@{win$composer.allFrecuences}"
+					selectedItem="@{win$composer.datofrc}" vflex="true">
+					<listhead>
+						<listheader label="Numero de Registro"
+							width="90px" />
+						<listheader label="Identificacion"
+							width="130px" />
+						<listheader label="Fecha de pago" width="130px" />
+						<listheader label="Estado" width="90px" />
+						<listheader label="Valor Cancelado"
+							width="140px" />
+					</listhead>
+					<listitem self="@{each='datofrc'}"
+						value="@{datofrc}">
+						<listcell label="@{datofrc.id_pago}" />
+						<listcell label="@{datofrc.n_cedula_tax}" />
+						<listcell label="@{datofrc.fecha}" />
+						<listcell label="@{datofrc.estado}" />
+						<listcell label="@{datofrc.valor_cancelado}" />
+					</listitem>
+				</listbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

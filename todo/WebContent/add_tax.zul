@@ -1,0 +1,119 @@
+<?page title="Registro"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
+<zk xmlns:n="http://www.w3.org/1999/xhtml">
+	<window id="win" title=".............." width="100%" border="normal"
+		apply="Controlador.EventController">
+
+		<panel id="panel" title="Agregar Nuevo Usuario..."
+			framable="true" width="100%" maximizable="true" minimizable="false"
+			border="normal" collapsible="true" closable="false"
+			onClose='alert("Panel is closed");'
+			onMinimize='alert("Panel is minimized");'>
+			<panelchildren>
+				<space />
+				<hbox>
+					<image id="image" src="img/usuario.png"
+						width="250px" />
+					<groupbox>
+						<n:br />
+						<caption label="Ingrese Datos..." />
+						Cedula: XXXXXXXXXX
+						<n:br />
+						<intbox id="n_cedula_tax" cols="25"
+							value="@{win$composer.current.n_cedula_tax}" />
+						<n:br />
+						Numero de Placa: XXX####
+						<n:br />
+						<textbox id="n_matricula" cols="25"
+							value="@{win$composer.current.n_matricula}" />
+						<n:br />
+						Nombres: Nombre1 Nombre2
+						<n:br />
+						<textbox id="nombres" cols="25"
+							value="@{win$composer.current.nombres}" />
+						<n:br />
+						Apellidos: Apellido1 Apellido2
+						<n:br />
+						<textbox id="apellidos" cols="25"
+							value="@{win$composer.current.apellidos}" />
+						<n:br />
+						<space />
+					</groupbox>
+					<groupbox>
+						<n:br />
+						<caption label="Otros datos.." />
+						Licencia: XXXXXXXXX
+						<n:br />
+						<intbox id="licencia" cols="25"
+							value="@{win$composer.current.licencia}" />
+						<n:br />
+						Direccion: XXXXXXXX
+						<n:br />
+						<textbox id="direccion" cols="25"
+							value="@{win$composer.current.direccion}" />
+						<n:br />
+						Telefono: XXXXXXXXXX
+						<n:br />
+						<textbox id="telefono" cols="25"
+							value="@{win$composer.current.telefono}" />
+						<n:br />
+						Fecha de Nacimiento: AAAA-MM-DD
+						<n:br />
+						<textbox id="fecha_nacimiento" cols="25"
+							value="@{win$composer.current.fecha_nacimiento}" />
+						<n:br />
+						<space />
+					</groupbox>
+					<vbox></vbox>
+					<iframe id="iframe1" src="view_vehiculo.zul"
+						width="500px" height="200px" style="border: 0px solid gray" />
+				</hbox>
+			</panelchildren>
+		</panel>
+		<space />
+		<groupbox>
+			<caption label="Opciones..." />
+			<button id="add" label="Agregar" width="36px" height="24px" />
+			<button id="Volver" label="Volver.." href="index.zul"
+				width="46px" height="24px" />
+		</groupbox>
+
+		<space />
+
+		<panel id="panel2" title="Informacion de usuarios ingresados"
+			framable="true" width="100%" maximizable="true" minimizable="false"
+			border="normal" collapsible="true" closable="false"
+			onClose='alert("Panel is closed");'
+			onMinimize='alert("Panel is minimized");'>
+			<panelchildren>
+				<listbox id="box" multiple="true" rows="9"
+					model="@{win$composer.allEvents}"
+					selectedItem="@{win$composer.current}" vflex="true">
+					<listhead>
+						<listheader label="Cedula" width="90px" />
+						<listheader label="N_Placa_vehiculo"
+							width="130px" />
+						<listheader label="Nombres" width="130px" />
+						<listheader label="Apelllidos" width="90px" />
+						<listheader label="Licencia" width="140px" />
+						<listheader label="Direccion" width="90px" />
+						<listheader label="Telefono" width="90px" />
+						<listheader label="Fecha de Nacimiento"
+							width="130px" />
+
+					</listhead>
+					<listitem self="@{each='event'}" value="@{event}">
+						<listcell label="@{event.n_cedula_tax}" />
+						<listcell label="@{event.n_matricula}" />
+						<listcell label="@{event.nombres}" />
+						<listcell label="@{event.apellidos}" />
+						<listcell label="@{event.licencia}" />
+						<listcell label="@{event.direccion}" />
+						<listcell label="@{event.telefono}" />
+						<listcell label="@{event.fecha_nacimiento}" />
+					</listitem>
+				</listbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>
