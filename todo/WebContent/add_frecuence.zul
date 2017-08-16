@@ -13,32 +13,6 @@
 			<panelchildren>
 				<space />
 				<hbox>
-					<!-- 					<groupbox> -->
-					<!-- 						<n:br /> -->
-					<!-- 						<caption label="..." /> -->
-					<!-- 						<textbox id="textbox2" cols="20" -->
-					<!-- 							readonly="true" /> -->
-					<!-- 						<n:br /> -->
-					<!-- 						<textbox id="textbox3" cols="20" -->
-					<!-- 							readonly="true" /> -->
-					<!-- 						<n:br /> -->
-					<!-- 						<textbox id="textbox4" cols="20" -->
-					<!-- 							readonly="true" /> -->
-					<!-- 						<n:br /> -->
-					<!-- 						<textbox id="textbox5" cols="20" -->
-					<!-- 							readonly="true" /> -->
-					<!-- 						<n:br /> -->
-					<!-- 						<textbox id="textbox6" cols="20" -->
-					<!-- 							readonly="true" /> -->
-					<!-- 						<n:br /> -->
-					<!-- 						<textbox id="textbox7" cols="20" -->
-					<!-- 							readonly="true" /> -->
-					<!-- 						<n:br /> -->
-					<!-- 						<textbox id="textbox8" cols="20" -->
-					<!-- 							readonly="true" /> -->
-					<!-- 						<n:br /> -->
-					<!-- 						<space /> -->
-					<!-- 					</groupbox> -->
 					<image id="image" src="img/calendari.png"
 						width="250px" />
 

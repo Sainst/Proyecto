@@ -1,8 +1,8 @@
 <?page title="Eliminar..."?>
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
 <zk xmlns:n="http://www.w3.org/1999/xhtml">
-	<window id="win" title=".............." width="100%"
-		border="normal" apply="Controlador.EventController">
+	<window id="win" title=".............." width="100%" border="normal"
+		apply="Controlador.EventController">
 
 		<panel id="panel" title="Eliminar Usuarios..." framable="true"
 			width="100%" maximizable="true" minimizable="false" border="normal"
@@ -14,21 +14,22 @@
 				<listbox id="box" multiple="true" rows="9"
 					model="@{win$composer.allEvents, load-after='delete.onClick'}"
 					selectedItem="@{win$composer.current}" vflex="true">
-							<listhead>
-			<listheader label="Cedula" width="90px"/>
-			<listheader label="N_Placa_vehiculo" width="130px"  />
-			<listheader label="Nombres" width="130px" />
-			<listheader label="Apelllidos" width="90px" />
-			<listheader label="Licencia" width="140px" />
-			
-		</listhead>		
-		<listitem self="@{each='event'}" value="@{event}">
-			<listcell label="@{event.n_cedula_tax}" />			
-			<listcell label="@{event.n_matricula}" />
-			<listcell label="@{event.nombres}" />
-			<listcell label="@{event.apellidos}" />
-			<listcell label="@{event.licencia}" />
-		</listitem>
+					<listhead>
+						<listheader label="Cedula" width="90px" />
+						<listheader label="N_Placa_vehiculo"
+							width="130px" />
+						<listheader label="Nombres" width="130px" />
+						<listheader label="Apelllidos" width="90px" />
+						<listheader label="Licencia" width="140px" />
+
+					</listhead>
+					<listitem self="@{each='event'}" value="@{event}">
+						<listcell label="@{event.n_cedula_tax}" />
+						<listcell label="@{event.n_matricula}" />
+						<listcell label="@{event.nombres}" />
+						<listcell label="@{event.apellidos}" />
+						<listcell label="@{event.licencia}" />
+					</listitem>
 				</listbox>
 				<space />
 			</panelchildren>
@@ -52,28 +53,28 @@
 						width="250px" />
 					<space />
 					<space />
-							<groupbox>
+					<groupbox>
 						<n:br />
 						<caption label="Ingrese Datos..." />
 						Cedula:
 						<n:br />
 						<intbox id="n_cedula_tax" cols="25"
-							value="@{win$composer.current.n_cedula_tax}" readonly = "true" />
+							value="@{win$composer.current.n_cedula_tax}" readonly="true" />
 						<n:br />
 						Numero de Placa:
 						<n:br />
 						<textbox id="n_matricula" cols="25"
-							value="@{win$composer.current.n_matricula}" readonly = "true" />
+							value="@{win$composer.current.n_matricula}" readonly="true" />
 						<n:br />
 						Nombres:
 						<n:br />
 						<textbox id="nombres" cols="25"
-							value="@{win$composer.current.nombres}" readonly = "true" />
+							value="@{win$composer.current.nombres}" readonly="true" />
 						<n:br />
-						Apellidos: 
+						Apellidos:
 						<n:br />
 						<textbox id="apellidos" cols="25"
-							value="@{win$composer.current.apellidos}" readonly = "true" />
+							value="@{win$composer.current.apellidos}" readonly="true" />
 						<n:br />
 						<space />
 					</groupbox>
@@ -83,27 +84,27 @@
 						Licencia:
 						<n:br />
 						<intbox id="licencia" cols="25"
-							value="@{win$composer.current.licencia}" readonly = "true" />
+							value="@{win$composer.current.licencia}" readonly="true" />
 						<n:br />
-						Direccion: 
+						Direccion:
 						<n:br />
 						<textbox id="direccion" cols="25"
-							value="@{win$composer.current.direccion}" readonly = "true" />
+							value="@{win$composer.current.direccion}" readonly="true" />
 						<n:br />
-						Telefono: 
+						Telefono:
 						<n:br />
 						<textbox id="telefono" cols="25"
-							value="@{win$composer.current.telefono}" readonly = "true" />
+							value="@{win$composer.current.telefono}" readonly="true" />
 						<n:br />
 						Fecha de Nacimiento:
 						<n:br />
 						<textbox id="fecha_nacimiento" cols="25"
-							value="@{win$composer.current.fecha_nacimiento}" readonly = "true" />
+							value="@{win$composer.current.fecha_nacimiento}" readonly="true" />
 						<n:br />
 						<n:br />
 						<space />
 					</groupbox>
-										<space />
+					<space />
 
 
 				</hbox>
@@ -116,7 +117,8 @@
 			<space />
 			<caption label="Opciones..." />
 			<button id="delete" label="Borrar..." width="36px"
-				height="24px" /> <attribute name="onClick"><![CDATA[
+				height="24px" />
+			<attribute name="onClick"><![CDATA[
 Messagebox.show("¿Estas seguro que deseas eliminar..?", "Eliminar...", Messagebox.OK | Messagebox.IGNORE  | Messagebox.CANCEL, Messagebox.QUESTION, new org.zkoss.zk.ui.event.EventListener() {
     public void onEvent(Event evt) throws InterruptedException {
         if (evt.getName().equals("onOK")) {
