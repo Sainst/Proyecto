@@ -51,28 +51,28 @@
 									<input class="form-control" placeholder="Contraseña"
 										name="password" type="password" value="">
 								</div>
+								<input type="submit" class="btn btn-lg btn-success btn-block"
+									name="btn">
 								<a href="index.zul" class="btn btn-lg btn-success btn-block">Iniciar
 									Sesion</a>
 
 							</fieldset>
-							<!-- 							<SCRIPT language=JavaScript> -->
-							<!-- // 									function go() { -->
-							<!-- // 										if ((email.getValue)) -->
-							<!-- // 										if (document.form.password.value == 'Shakun' -->
-							<!-- // 												&& document.form.email.value == 'Polimorfismo_1234') { -->
-							<!-- // 											document.form.submit(); -->
-							<!-- // 										} else { -->
-							<!-- // 											alert("Porfavor ingrese, nombre de usuario y contraseña correctos."); -->
-							<!-- // 										} -->
-							<!-- 									} -->
-							<!-- 								</SCRIPT> -->
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
+	</script>
+		<script type="text/javascript">
+		var usuario = document.getElementById("email");
+		var contraseña = document.getElementById("password");
+		if (usuario == 'mcpremiumcar' && contraseña == '12345') {
+			alert("Login Correcto.");
+		} else {
+			alert("Porfavor ingrese, nombre de usuario y contraseña correctos.");
+		}
+	</script>
 	<!-- jQuery -->
 	<!-- 	<script src="js/jquery.min.js"></script> -->
 
