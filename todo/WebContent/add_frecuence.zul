@@ -1,4 +1,4 @@
-<?page title="Pagina"?>
+<?page title="Registro"?>
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
 <zk xmlns:n="http://www.w3.org/1999/xhtml">
 	<space />

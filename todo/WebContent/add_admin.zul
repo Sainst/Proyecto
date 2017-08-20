@@ -1,8 +1,8 @@
 <?page title = "Registro"?>
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
 <zk xmlns:n="http://www.w3.org/1999/xhtml">
-	<window id="win" title=".............." position="center"
-		width="100%" border="normal" apply="Controlador.AdminController">
+	<window id="win" title=".............." width="100%" border="normal"
+		apply="Controlador.AdminController">
 
 		<panel id="panel"
 			title="Agregar Nuevo Miembro Administrativo..." framable="true"
@@ -115,47 +115,6 @@
 			<button id="Volver" label="Volver.." href="index.zul"
 				width="46px" height="24px" />
 		</groupbox>
-		<space />
-		<panel id="panel2"
-			title="Informacion de Miembros Administrativos..." framable="true"
-			width="100%" maximizable="true" minimizable="false" border="normal"
-			collapsible="true" closable="false"
-			onClose='alert("Panel is closed");'
-			onMinimize='alert("Panel is minimized");'>
-			<panelchildren>
-				<listbox id="box1" multiple="true" rows="8"
-					model="@{win$composer.allAdmins}"
-					selectedItem="@{win$composer.datoad}" vflex="true">
-					<listhead>
-						<listheader label="Cedula..." width="110px"
-							value="center" />
-						<listheader label="Cargo..." width="90px" />
-						<listheader label="Estado..." width="90px" />
-						<listheader label="Nombres..." width="200px" />
-						<listheader label="Apellidos..." width="200px" />
-						<listheader label="Fecha Nacimiento..."
-							width="150px" />
-						<listheader label="Telefono..." width="100px" />
-						<listheader label="Correo..." width="200px" />
-						<listheader label="Grupo Sanguineo..."
-							width="130px" />
-					</listhead>
-					<listitem self="@{each='administrador'}"
-						value="@{administrador}">
-						<listcell
-							label="@{administrador.n_cedula_admi}" />
-						<listcell label="@{administrador.id_cargo}" />
-						<listcell label="@{administrador.abr_estado}" />
-						<listcell label="@{administrador.nombres}" />
-						<listcell label="@{administrador.apellidos}" />
-						<listcell
-							label="@{administrador.fecha_nacimiento}" />
-						<listcell label="@{administrador.telefono}" />
-						<listcell label="@{administrador.email}" />
-						<listcell label="@{administrador.tipo_sangre}" />
-					</listitem>
-				</listbox>
-			</panelchildren>
-		</panel>
+
 	</window>
 </zk>

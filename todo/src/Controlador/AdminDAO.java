@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-
 import Modelo.DatoAdmin;
 
 public class AdminDAO {
@@ -44,6 +43,7 @@ public class AdminDAO {
 				admin.setTelefono(rs.getString(7));
 				admin.setEmail(rs.getString(8));
 				admin.setTipo_sangre(rs.getString(9));
+				allAdmins.add(admin);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

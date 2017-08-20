@@ -60,8 +60,8 @@
 				height="24px" />
 			<button id="Volver" label="Volver.." href="index.zul"
 				width="46px" height="24px" />
-			<button id="delete" label="Delete" width="46px"
-				height="24px" disabled="true" />
+<!-- 			<button id="delete" label="Delete" width="46px" -->
+<!-- 				height="24px" disabled="true" /> -->
 		</groupbox>
 	</window>
 </zk>

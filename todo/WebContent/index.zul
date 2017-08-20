@@ -10,7 +10,7 @@
 						onClick="alert(self.label)" href="add_tax.zul"
 						image="/img/user.png" />
 					<menuitem label="Registrar Nuevo Personal..."
-						disabled="true" onClick="alert(self.label)" href="add_admin.zul"
+						disabled="false" onClick="alert(self.label)" href="add_admin.zul"
 						image="/img/secre.png" />
 					<menuitem label="Registrar Nuevo Vehiculo..."
 						onClick="alert(self.label)" href="add_vehiculo.zul"
@@ -23,8 +23,8 @@
 					<menuitem label="Editar Taxista..."
 						onClick="alert(self.label)" href="edit_tax.zul"
 						image="/img/user.png" />
-					<menuitem label="Editar Personal..." disabled="true"
-						onClick="alert(self.label)" image="/img/secre.png" />
+					<menuitem label="Editar Personal..." disabled="false"
+						onClick="alert(self.label)" href="edit_admin.zul" image="/img/secre.png" />
 					<menuitem label="Editar Vehiculo..."
 						onClick="alert(self.label)" href="edit_vehiculol.zul"
 						image="/img/Del.png" />
