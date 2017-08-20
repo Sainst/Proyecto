@@ -8,10 +8,9 @@ import org.zkoss.zul.Listbox;
 import Modelo.DatoAdmin;
 
 public class AdminController extends GenericForwardComposer{
-	AdminDAO admidao = new AdminDAO();
+	AdminDAO admdao = new AdminDAO();
 	DatoAdmin datoad = new DatoAdmin();
 	Listbox box;
-	
 	public DatoAdmin getDatoad() {
 		return datoad;
 	}
@@ -19,23 +18,23 @@ public class AdminController extends GenericForwardComposer{
 		this.datoad = datoad;
 	}
 	public List getAllAdmins(){
-		return admidao.findAllAdmin();
+		return admdao.findAllAdmin();
 	}
 	public void onClick$add(){
-		DatoAdmin newAdmin = new DatoAdmin(datoad.getN_cedula_admi(), datoad.getId_cargo(),
+		DatoAdmin newAdm = new DatoAdmin(datoad.getN_cedula_admi(), datoad.getId_cargo(),
 				datoad.getAbr_estado(), datoad.getNombres(), datoad.getApellidos(), 
 				datoad.getFecha_nacimiento(), datoad.getTelefono(), datoad.getEmail(), 
 				datoad.getTipo_sangre());
-		admidao.insert(newAdmin);
+		admdao.insert(newAdm);
 	}
 	public void onClick$update() {		
 		if (box.getSelectedItem() != null) {
-			admidao.update((DatoAdmin) box.getSelectedItem().getValue());
+			admdao.update((DatoAdmin) box.getSelectedItem().getValue());
 		}
 	}
 	public void onClick$delete() {		
 		if (box.getSelectedItem() != null) {
-			admidao.delete((DatoAdmin) box.getSelectedItem().getValue());
+			admdao.delete((DatoAdmin) box.getSelectedItem().getValue());
 		}
 	}
 }

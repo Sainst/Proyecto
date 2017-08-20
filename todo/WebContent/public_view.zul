@@ -1,17 +1,15 @@
+<?page title="Vista Taxista - Pagos" ?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
 <zk xmlns:n="http://www.w3.org/1999/xhtml">
-	<window height="100%" border="normal">
-		<?page title="Vista Taxista - Pagos" ?>
-		<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
-		<space />
-		<space />
-		<space />
-		<iframe id="iframe1" src="view_taxista.zul" width="100%"
-			height="250px" style="border: 0px solid gray" />
+	<window title="Vista Publica..." height="100%" border="false">
 
+		<menubar id="Menu">
+			<menuitem label="Salir..." href="index.html"
+				image="/img/lol.png" onClick="alert(self.label)" />
+		</menubar>
+		<iframe id="iframe1" src="view_taxista.zul" width="100%"
+			height="200px" style="border: 0px solid gray" />
 		<iframe id="iframe" src="view_frecuence.zul" width="100%"
 			height="200px" style="border: 0px solid gray" />
-		<caption label="Volver a Pagina Principal..." />
-		<button id="Volver" label="Volver.." href="index.html"
-			width="46px" height="24px" />
 	</window>
 </zk>

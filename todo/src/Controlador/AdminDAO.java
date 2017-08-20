@@ -27,23 +27,25 @@ public class AdminDAO {
 		Connection conn = null;
 		List allAdmins = new ArrayList();
 		try {
+			// get connection
 			conn = DriverManager.getConnection(url, user, pwd);
 			stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("Select * from administracion");
+			ResultSet rs = stmt.executeQuery("select * from vehiculo");
 
-			DatoAdmin admin;
+			// fetch all events from database
+			DatoAdmin adm;
 			while (rs.next()) {
-				admin = new DatoAdmin();
-				admin.setN_cedula_admi(rs.getString(1));
-				admin.setId_cargo(rs.getString(2));
-				admin.setAbr_estado(rs.getString(3));
-				admin.setNombres(rs.getString(4));
-				admin.setApellidos(rs.getString(5));
-				admin.setFecha_nacimiento(rs.getString(6));
-				admin.setTelefono(rs.getString(7));
-				admin.setEmail(rs.getString(8));
-				admin.setTipo_sangre(rs.getString(9));
-				allAdmins.add(admin);
+				adm = new DatoAdmin();
+				adm.setN_cedula_admi(rs.getString(1));
+				adm.setId_cargo(rs.getString(2));
+				adm.setAbr_estado(rs.getString(3));
+				adm.setNombres(rs.getString(4));
+				adm.setApellidos(rs.getString(5));
+				adm.setFecha_nacimiento(rs.getString(6));
+				adm.setTelefono(rs.getString(7));
+				adm.setEmail(rs.getString(8));
+				adm.setTipo_sangre(rs.getString(9));
+				allAdmins.add(adm);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
