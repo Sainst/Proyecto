@@ -1,0 +1,66 @@
+<?page title="Registro"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
+<zk xmlns:n="http://www.w3.org/1999/xhtml">
+	<window id="win" title=".............." width="100%" border="normal"
+		apply="Controlador.EstadoController">
+				<panel id="panel" title="Estado..."
+			framable="true" width="100%" maximizable="true" minimizable="false"
+			border="normal" collapsible="true" closable="false"
+			onClose='alert("Panel is closed");'
+			onMinimize='alert("Panel is minimized");'>
+			<panelchildren>
+				<space />
+				<hbox>
+					<image id="image" src="img/status.png"
+						width="250px" />
+					<groupbox>
+						<n:br />
+						<caption label="Ingrese Datos..." />
+						Codigo Estado: XXXX
+						<n:br />
+						<textbox id="abr_estado" cols="25"
+							value="@{win$composer.datoes.abr_estado}" />
+						<n:br />
+						Descripcion: XXXXXXXX
+						<n:br />
+						<textbox id="estado" cols="25"
+							value="@{win$composer.datoes.estado}" />
+						<n:br />
+						<space />
+					</groupbox>
+				</hbox>
+			</panelchildren>
+		</panel>
+		<space />
+		<groupbox>
+			<caption label="Opciones..." />
+			<button id="add" label="Agregar" width="36px" height="24px" />
+			<button id="Volver" label="Volver.." href="index.zul"
+				width="46px" height="24px" />
+			<button id="update" label="Actualizar" width="46px"
+				height="24px" />
+		</groupbox>
+		<space />
+		<panel id="panel2" title="Informacion de Estados"
+			framable="true" width="100%" maximizable="true" minimizable="false"
+			border="normal" collapsible="true" closable="false"
+			onClose='alert("Panel is closed");'
+			onMinimize='alert("Panel is minimized");'>
+			<panelchildren>
+				<listbox id="box" multiple="true" rows="9"
+					model="@{win$composer.allEstados}"
+					selectedItem="@{win$composer.datoes}" vflex="true">
+					<listhead>
+						<listheader label="Codigo" width="90px" />
+						<listheader label="Descripcion" width="130px" />
+					</listhead>
+					<listitem self="@{each='estado'}"
+						value="@{estado}">
+						<listcell label="@{estado.abr_estado}" />
+						<listcell label="@{estado.estado}" />
+					</listitem>
+				</listbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

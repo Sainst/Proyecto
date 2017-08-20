@@ -5,19 +5,15 @@
 html {
 	height: 100%
 }
-
 body {
 	height: 100%
 }
-
 #map-container {
 	height: 30%
 }
-
 body {
 	background-color: #CCC
 }
-
 #map-outer {
 	height: 440px;
 	padding: 20px;
@@ -25,22 +21,18 @@ body {
 	margin-bottom: 20px;
 	background-color: #FFF
 }
-
 #map-container {
 	height: 400px
 }
-
 @media all and (max-width: 991px) {
 	#map-outer {
 		height: 650px
 	}
 }
-
 .input-group[class*="col-"] {
 	padding-right: 15px;
 	padding-left: 15px;
 }
-
 #map-container {
 	height: 400px
 }
@@ -48,19 +40,13 @@ body {
 <script>
 	src = "http://maps.google.com/maps/api/js?sensor=false"
 </script>
-
 <title>Ubicacion - Contactanos...</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <!-- Bootstrap core CSS -->
-<link
-	href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.css"
-	rel="stylesheet" media="screen">
+<link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.css" rel="stylesheet" media="screen">
 <link href="css/bootstrap.min.css" rel="stylesheet">
-
 <!-- Custom CSS -->
 <link href="css/simple-sidebar.css" rel="stylesheet">
-
 </head>
 <body>
 	<div id="wrapper">
@@ -70,13 +56,8 @@ body {
                 <ul>
                     <li><a href="login.html">Administracion...</a></li>
                     <li><a href="public_view.zul">Taxista</a></li>
-<!--                      <li><a href="#">cosas2</a></li> -->
                 </ul>
-<!-- 				<li><a href="#">cosas3</a></li> -->
-<!-- 				<li><a href="#">cosas 4</a></li> -->
 				<li><a href="#">Contactanos...</a></li>
-<!-- 				<li><a img src="/img/salir.png" href="login.html">Cerrar...</a> -->
-<!-- 				</li> -->
 			</ul>
 		</div>
 		<div class="container">
@@ -96,7 +77,6 @@ body {
 				<!-- /map-outer -->
 			</div>
 			<!-- /row -->
-
 			<div class="row">
 				<form class="form-horizontal" name="commentform">
 					<div class="form-group">
@@ -134,7 +114,6 @@ body {
 		</div>
 		<!-- /container -->
 	</div>
-
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script
 		src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -145,23 +124,19 @@ body {
 	<script>
 		function init_map() {
 			var var_location = new google.maps.LatLng(-0.946832, -80.730498);
-
 			var var_mapoptions = {
 				center : var_location,
 				zoom : 16
 			};
-
 			var var_marker = new google.maps.Marker({
 				position : var_location,
 				map : var_map,
 				title : "Aqui estamos..."
 			});
-
 			var var_map = new google.maps.Map(document
 					.getElementById("map-container"), var_mapoptions);
 
 			var_marker.setMap(var_map);
-
 		}
 		google.maps.event.addDomListener(window, 'load', init_map);
 	</script>

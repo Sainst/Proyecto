@@ -7,42 +7,44 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import Modelo.DatoFrecuence;
 
-public class Frecuence {
+import Modelo.DatoEstado;
+
+public class EstadoDAO {
 	private String url = "jdbc:postgresql://localhost:5432/PremiumCar";
 	private String user = "Saul";
 	private String pwd = "Aishiteru1234";
-
-	public Frecuence() {
+	
+	public EstadoDAO() {
 		try {
 			Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
-	public List findAllFrecuence(){
+
+	public List findAllEst() {
 		Statement stmt = null;
 		Connection conn = null;
-		List allFrecuences = new ArrayList();
-		try{
+		List allEstados = new ArrayList();
+		try {
+			// get connection
 			conn = DriverManager.getConnection(url, user, pwd);
 			stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("select * from pagos");
-			
-			DatoFrecuence frc;
+			ResultSet rs = stmt.executeQuery("select * from estado");
+
+			// fetch all events from database
+			DatoEstado est;
 			while (rs.next()) {
-				frc = new DatoFrecuence();
-				frc.setId_pago(rs.getString(1));
-				frc.setN_cedula_tax(rs.getString(2));
-				frc.setFecha(rs.getString(3));
-				frc.setEstado(rs.getString(4));
-				frc.setValor_cancelado(rs.getInt(5));
-				allFrecuences.add(frc);
+				est = new DatoEstado();
+				est.setAbr_estado(rs.getString(1));
+				est.setEstado(rs.getString(2));
+				allEstados.add(est);
 			}
-		}catch (SQLException e) {
+
+		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally{
+		} finally {
 			try {
 				stmt.close();
 			} catch (SQLException e) {
@@ -53,10 +55,10 @@ public class Frecuence {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-		}		
-		return allFrecuences;
+		}
+		return allEstados;
 	}
-	public boolean insert(DatoFrecuence frc){
+	public boolean insert(DatoEstado est) {
 		Connection conn = null;
 		Statement stmt = null;
 		boolean result = false;
@@ -64,13 +66,13 @@ public class Frecuence {
 			// get connection
 			conn = DriverManager.getConnection(url, user, pwd);
 			stmt = conn.createStatement();
-			if (stmt.executeUpdate("insert into pagos values ('" + frc.getId_pago()+ "','" + frc.getN_cedula_tax() +
-					"','" + frc.getFecha()+"','" + frc.getEstado() +"'," + frc.getValor_cancelado()+")") > 0);
+			if (stmt.executeUpdate("insert into estado values ('" + est.getAbr_estado() + "','" + est.getEstado()
+					+"')") > 0);
 			result = true;
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally{
+		} finally {
 			try {
 				stmt.close();
 			} catch (SQLException e) {
@@ -82,25 +84,25 @@ public class Frecuence {
 				e.printStackTrace();
 			}
 		}
-		
+
 		return result;
 	}
-	
-	public boolean update(DatoFrecuence frc){
+	public boolean update(DatoEstado est) {
 		Connection conn = null;
 		Statement stmt = null;
 		boolean result = false;
 		try {
 			// get connection
 			conn = DriverManager.getConnection(url, user, pwd);
-		    stmt = conn.createStatement();				
-		    
-			if (stmt.executeUpdate("update pagos set n_cedula_tax= '" + frc.getN_cedula_tax() +
-					"', fecha= '" + frc.getFecha() +"', estado= '" + frc.getEstado() + "', valor_cancelado= " + frc.getValor_cancelado() +" where id_pago= '" + frc.getId_pago() + "'") > 0);
+			stmt = conn.createStatement();
+
+			if (stmt.executeUpdate("update estado set abr_estado= '" + est.getAbr_estado() + "', estado = '"
+					+ est.getEstado() + "' where abr_estado= '" + est.getAbr_estado() + "'") > 0)
+				;
 			result = true;
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally{
+		} finally {
 			try {
 				stmt.close();
 			} catch (SQLException e) {
@@ -112,7 +114,8 @@ public class Frecuence {
 				e.printStackTrace();
 			}
 		}
-		
+
 		return result;
 	}
+
 }

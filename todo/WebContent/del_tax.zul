@@ -1,4 +1,4 @@
-<?page title="Eliminar..."?>
+<?page title="Eliminar"?>
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
 <zk xmlns:n="http://www.w3.org/1999/xhtml">
 	<window id="win" title=".............." width="100%" border="normal"
@@ -117,20 +117,11 @@
 			<space />
 			<caption label="Opciones..." />
 			<button id="delete" label="Borrar..." width="36px"
-				height="24px" />
-			<attribute name="onClick"><![CDATA[
-Messagebox.show("¿Estas seguro que deseas eliminar..?", "Eliminar...", Messagebox.OK | Messagebox.IGNORE  | Messagebox.CANCEL, Messagebox.QUESTION, new org.zkoss.zk.ui.event.EventListener() {
-    public void onEvent(Event evt) throws InterruptedException {
-        if (evt.getName().equals("onOK")) {
-            alert("Data Saved !");
-        } else if (evt.getName().equals("onIgnore")) {
-            Messagebox.show("Ignore Save", "Warning", Messagebox.OK, Messagebox.ERROR);
-        } else {
-            alert("Save Canceled !");
-        }
-    }
-});
+				height="24px">
+				<attribute name="onClick"><![CDATA[
+    Messagebox.show("Se ha eliminado el usuario...", "Information", Messagebox.OK, Messagebox.INFORMATION);
 ]]></attribute>
+            </button>
 			<button id="Volver" label="Volver.." href="index.zul"
 				width="46px" height="24px" />
 			<!-- 		<button id="delete" label="Delete" width="46px" height="24px"/> -->

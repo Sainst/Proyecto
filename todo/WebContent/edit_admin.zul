@@ -1,4 +1,4 @@
-<?page title="Modificacion..."?>
+<?page title="Modificacion"?>
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
 <zk xmlns:n="http://www.w3.org/1999/xhtml">
 	<window id="win" title="Actualizar informacion del personal..."

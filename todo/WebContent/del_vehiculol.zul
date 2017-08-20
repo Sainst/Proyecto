@@ -1,4 +1,4 @@
-<?page title="Pagina"?>
+<?page title="Eliminar"?>
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
 <zk xmlns:n="http://www.w3.org/1999/xhtml">
 	<window id="win" title="Esta es la parte de Borrar..." width="100%"
@@ -28,31 +28,40 @@
 				<space />
 			</panelchildren>
 		</panel>
-		<groupbox>
-			<n:br />
-			<caption label="Datos..." />
-			Numero de Placa: XXX####
-			<n:br />
-			<textbox id="n_matricula" cols="25"
-				value="@{win$composer.datove.n_matricula}" readonly = "true"/>
-			<n:br />
-			Marca: XXXXXXXXX
-			<n:br />
-			<textbox id="marca" cols="25"
-				value="@{win$composer.datove.marca}" readonly = "true"/>
-			<n:br />
-			Modelo: XXXXXXX
-			<n:br />
-			<textbox id="modelo" cols="25"
-				value="@{win$composer.datove.modelo}" readonly = "true"/>
-			<n:br />
-			Descripcion: XXXXXXXXXX
-			<n:br />
-			<textbox id="descripcion" cols="25"
-				value="@{win$composer.datove.descripcion}" readonly = "true"/>
-			<n:br />
-			<n:br />
-		</groupbox>
+		<panel id="panel2" title="Informacion de usuario a eliminar"
+			framable="true" width="100%" maximizable="true" minimizable="false"
+			border="normal" collapsible="true" closable="false"
+			onClose='alert("Panel is closed");'
+			onMinimize='alert("Panel is minimized");'>
+			<panelchildren>
+				<groupbox>
+					<n:br />
+					<caption label="Datos..." />
+					Numero de Placa: XXX####
+					<n:br />
+					<textbox id="n_matricula" cols="25"
+						value="@{win$composer.datove.n_matricula}" readonly="true" />
+					<n:br />
+					Marca: XXXXXXXXX
+					<n:br />
+					<textbox id="marca" cols="25"
+						value="@{win$composer.datove.marca}" readonly="true" />
+					<n:br />
+					Modelo: XXXXXXX
+					<n:br />
+					<textbox id="modelo" cols="25"
+						value="@{win$composer.datove.modelo}" readonly="true" />
+					<n:br />
+					Descripcion: XXXXXXXXXX
+					<n:br />
+					<textbox id="descripcion" cols="25"
+						value="@{win$composer.datove.descripcion}" readonly="true" />
+					<n:br />
+					<n:br />
+				</groupbox>
+			</panelchildren>
+
+		</panel>
 		<groupbox>
 			<space />
 			<caption label="Opciones..." />
@@ -60,8 +69,8 @@
 				height="24px" />
 			<button id="Volver" label="Volver.." href="index.zul"
 				width="46px" height="24px" />
-<!-- 			<button id="delete" label="Delete" width="46px" -->
-<!-- 				height="24px" disabled="true" /> -->
+			<!-- 			<button id="delete" label="Delete" width="46px" -->
+			<!-- 				height="24px" disabled="true" /> -->
 		</groupbox>
 	</window>
 </zk>

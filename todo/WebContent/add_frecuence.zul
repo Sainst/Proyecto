@@ -55,9 +55,17 @@
 		<space />
 		<groupbox>
 			<caption label="Opciones..." />
-			<button id="add" label="Agregar" width="36px" height="24px" />
+			<button id="add" label="Agregar" width="36px" height="24px" >
+				<attribute name="onClick"><![CDATA[
+    Messagebox.show("Se ha registrado un nuevo pago...", "Information", Messagebox.OK, Messagebox.INFORMATION);
+]]></attribute>
+            </button>
 			<button id="update" label="Actualizar" width="46px"
-				height="24px" disabled="true" />
+				height="24px" disabled="false" >
+				<attribute name="onClick"><![CDATA[
+    Messagebox.show("Se ha actualizado el pago seleccionado...", "Information", Messagebox.OK, Messagebox.INFORMATION);
+]]></attribute>
+            </button>
 			<button id="Volver" label="Volver.." href="index.zul"
 				width="46px" height="24px" />
 		</groupbox>

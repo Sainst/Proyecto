@@ -3,7 +3,10 @@
 <zk xmlns:n="http://www.w3.org/1999/xhtml">
 	<window id="win" title=".............." width="100%" border="normal"
 		apply="Controlador.AdminController">
-
+		<menubar id="Menu">
+			<menuitem label="Estados..." disabled = "true" image="/img/states.png" onClick="alert(self.label)" href=""/>
+			<menuitem label="Tipos..." disabled = "true" image="/img/typeadd.png" onClick="alert(self.label)" href=""/>
+		</menubar>
 		<panel id="panel"
 			title="Agregar Nuevo Miembro Administrativo..." framable="true"
 			width="100%" maximizable="true" minimizable="false" border="normal"
@@ -81,22 +84,22 @@
 						<space />
 						<n:br />
 						<caption label="" />
-						Fecha de Nacimiento:
+						Fecha de Nacimiento: AAAA-MM-DD
 						<n:br />
 						<textbox id="fecha_nacimiento" cols="25"
 							value="@{win$composer.datoad.fecha_nacimiento}" />
 						<n:br />
-						Telefono
+						Telefono: ##########
 						<n:br />
 						<textbox id="telefono" cols="25"
 							value="@{win$composer.datoad.telefono}" />
 						<n:br />
-						Correo:
+						Correo: XXXXX@XXXX.XXX
 						<n:br />
 						<textbox id="email" cols="25"
 							value="@{win$composer.datoad.email}" />
 						<n:br />
-						Grupo Sanguineo: XXXXXXXX XXXXXXXX
+						Grupo Sanguineo: +/- XX
 						<n:br />
 						<textbox id="tipo_sangre" cols="25"
 							value="@{win$composer.datoad.tipo_sangre}" />
@@ -111,7 +114,11 @@
 		<space />
 		<groupbox>
 			<caption label="Opciones..." />
-			<button id="add" label="Agregar" width="36px" height="24px" />
+			<button id="add" label="Agregar" width="36px" height="24px">
+				<attribute name="onClick"><![CDATA[
+    Messagebox.show("Se ha registrado un nuevo administrador...", "Information", Messagebox.OK, Messagebox.INFORMATION);
+]]></attribute>
+            </button>
 			<button id="Volver" label="Volver.." href="index.zul"
 				width="46px" height="24px" />
 		</groupbox>

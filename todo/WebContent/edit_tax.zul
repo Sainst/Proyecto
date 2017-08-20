@@ -1,4 +1,4 @@
-<?page title="Modificacion..."?>
+<?page title="Modificacion"?>
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
 <zk xmlns:n="http://www.w3.org/1999/xhtml">
 	<window id="win" title="Actualizar informacion del taxi..."
@@ -39,102 +39,129 @@
 
 			</panelchildren>
 		</panel>
-		<hbox>
-			<groupbox>
-				<n:br />
-				<caption label="..." />
-				<textbox id="textbox2" cols="20" readonly="true" />
-				<n:br />
-				<textbox id="textbox3" cols="20" readonly="true" />
-				<n:br />
-				<textbox id="textbox4" cols="20" readonly="true" />
-				<n:br />
-				<textbox id="textbox5" cols="20" readonly="true" />
-				<n:br />
-				<textbox id="textbox6" cols="20" readonly="true" />
-				<n:br />
-				<textbox id="textbox7" cols="20" readonly="true" />
-				<n:br />
-				<textbox id="textbox8" cols="20" readonly="true" />
-				<n:br />
-				<space />
-			</groupbox>
-			<groupbox>
-				<n:br />
-				<caption label="Ingrese Datos..." />
-				Cedula:1316972577
-				<n:br />
-				<intbox id="n_cedula_tax" cols="25"
-					value="@{win$composer.current.n_cedula_tax}" readonly="true" />
-				<n:br />
-				Numero de Placa: XXX####
-				<n:br />
-				<textbox id="n_matricula" cols="25"
-					value="@{win$composer.current.n_matricula}" readonly="true" />
-				<n:br />
-				Nombres: Nombre1 Nombre2
-				<n:br />
-				<textbox id="nombres" cols="25"
-					value="@{win$composer.current.nombres}" />
-				<n:br />
-				Apellidos: Apellido1 Apellido2
-				<n:br />
-				<textbox id="apellidos" cols="25"
-					value="@{win$composer.current.apellidos}" />
-				<n:br />
-				<space />
-			</groupbox>
-			<groupbox>
-				<n:br />
-				<caption label="Otros datos.." />
-				Licencia: XXXXXXXXX
-				<n:br />
-				<intbox id="licencia" cols="25"
-					value="@{win$composer.current.licencia}" />
-				<n:br />
-				Direccion: XXXXXXXX
-				<n:br />
-				<textbox id="direccion" cols="25"
-					value="@{win$composer.current.direccion}" />
-				<n:br />
-				Telefono: XXXXXXXXXX
-				<n:br />
-				<textbox id="telefono" cols="25"
-					value="@{win$composer.current.telefono}" />
-				<n:br />
-				Fecha de Nacimiento: AAAA-MM-DD
-				<n:br />
-				<textbox id="fecha_nacimiento" cols="25"
-					value="@{win$composer.current.fecha_nacimiento}" />
-				<n:br />
-				<n:br />
-				<space />
-			</groupbox>
-			<groupbox>
-				<n:br />
-				<caption label="..." />
-				<textbox id="textbox9" cols="20" readonly="true" />
-				<n:br />
-				<textbox id="textbox10" cols="20" readonly="true" />
-				<n:br />
-				<textbox id="textbox11" cols="20" readonly="true" />
-				<n:br />
-				<textbox id="textbox12" cols="20" readonly="true" />
-				<n:br />
-				<textbox id="textbox13" cols="20" readonly="true" />
-				<n:br />
-				<textbox id="textbox14" cols="20" readonly="true" />
-				<n:br />
-				<textbox id="textbox15" cols="20" readonly="true" />
-				<n:br />
-				<space />
-			</groupbox>
+		<panel id="panel2" title="Informacion de usuario a eliminar"
+			framable="true" width="100%" maximizable="true" minimizable="false"
+			border="normal" collapsible="true" closable="false"
+			onClose='alert("Panel is closed");'
+			onMinimize='alert("Panel is minimized");'>
+			<panelchildren>
+				<hbox>
+					<groupbox>
+						<n:br />
+						<caption label="..." />
+						<textbox id="textbox2" cols="20"
+							readonly="true" />
+						<n:br />
+						<textbox id="textbox3" cols="20"
+							readonly="true" />
+						<n:br />
+						<textbox id="textbox4" cols="20"
+							readonly="true" />
+						<n:br />
+						<textbox id="textbox5" cols="20"
+							readonly="true" />
+						<n:br />
+						<textbox id="textbox6" cols="20"
+							readonly="true" />
+						<n:br />
+						<textbox id="textbox7" cols="20"
+							readonly="true" />
+						<n:br />
+						<textbox id="textbox8" cols="20"
+							readonly="true" />
+						<n:br />
+						<space />
+					</groupbox>
+					<groupbox>
+						<n:br />
+						<caption label="Ingrese Datos..." />
+						Cedula:1316972577
+						<n:br />
+						<intbox id="n_cedula_tax" cols="25"
+							value="@{win$composer.current.n_cedula_tax}" readonly="true" />
+						<n:br />
+						Numero de Placa: XXX####
+						<n:br />
+						<textbox id="n_matricula" cols="25"
+							value="@{win$composer.current.n_matricula}" readonly="true" />
+						<n:br />
+						Nombres: Nombre1 Nombre2
+						<n:br />
+						<textbox id="nombres" cols="25"
+							value="@{win$composer.current.nombres}" />
+						<n:br />
+						Apellidos: Apellido1 Apellido2
+						<n:br />
+						<textbox id="apellidos" cols="25"
+							value="@{win$composer.current.apellidos}" />
+						<n:br />
+						<space />
+					</groupbox>
+					<groupbox>
+						<n:br />
+						<caption label="Otros datos.." />
+						Licencia: XXXXXXXXX
+						<n:br />
+						<intbox id="licencia" cols="25"
+							value="@{win$composer.current.licencia}" />
+						<n:br />
+						Direccion: XXXXXXXX
+						<n:br />
+						<textbox id="direccion" cols="25"
+							value="@{win$composer.current.direccion}" />
+						<n:br />
+						Telefono: XXXXXXXXXX
+						<n:br />
+						<textbox id="telefono" cols="25"
+							value="@{win$composer.current.telefono}" />
+						<n:br />
+						Fecha de Nacimiento: AAAA-MM-DD
+						<n:br />
+						<textbox id="fecha_nacimiento" cols="25"
+							value="@{win$composer.current.fecha_nacimiento}" readonly="true" />
+						<n:br />
+						<n:br />
+						<space />
+					</groupbox>
+					<groupbox>
+						<n:br />
+						<caption label="..." />
+						<textbox id="textbox9" cols="20"
+							readonly="true" />
+						<n:br />
+						<textbox id="textbox10" cols="20"
+							readonly="true" />
+						<n:br />
+						<textbox id="textbox11" cols="20"
+							readonly="true" />
+						<n:br />
+						<textbox id="textbox12" cols="20"
+							readonly="true" />
+						<n:br />
+						<textbox id="textbox13" cols="20"
+							readonly="true" />
+						<n:br />
+						<textbox id="textbox14" cols="20"
+							readonly="true" />
+						<n:br />
+						<textbox id="textbox15" cols="20"
+							readonly="true" />
+						<n:br />
+						<space />
+					</groupbox>
 
-		</hbox>
+				</hbox>
+			</panelchildren>
+
+		</panel>
 		<groupbox>
 			<caption label="Opciones..." />
 			<button id="update" label="Actualizar" width="46px"
-				height="24px" />
+				height="24px">
+				<attribute name="onClick"><![CDATA[
+    Messagebox.show("Se ha actualizado este Usuario...", "Information", Messagebox.OK, Messagebox.INFORMATION);
+]]></attribute>
+            </button>
 			<button id="Volver" label="Volver.." href="index.zul"
 				width="46px" height="24px" />
 
