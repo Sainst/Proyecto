@@ -47,7 +47,7 @@
 						<space />
 					</groupbox>
 					<iframe id="iframe1" src="view_taxista.zul"
-						width="780px" height="200px" style="border: 0px solid gray" />
+						width="780px" height="250px" style="border: 0px solid gray" />
 				</hbox>
 				<space />
 			</panelchildren>

@@ -10,7 +10,7 @@
 			onClose='alert("Panel is closed");'
 			onMinimize='alert("Panel is minimized");'>
 			<panelchildren>
-				<listbox id="box" multiple="true" rows="9"
+				<listbox id="box" multiple="true" rows="6"
 					model="@{win$composer.allEvents}"
 					selectedItem="@{win$composer.current}" vflex="true">
 					<listhead>
