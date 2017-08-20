@@ -4,7 +4,7 @@
 	<window title="Vista Publica..." height="60%" border="normal">
 
 		<menubar id="Menu">
-			<menuitem label="Salir..." href="index.html"
+			<menuitem label="Salir..." href="/src/index.html"
 				image="/img/lol.png" onClick="alert(self.label)" />
 		</menubar>
 		<iframe id="iframe" src="view_taxista.zul" width="100%"

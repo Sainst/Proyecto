@@ -31,33 +31,62 @@
 					</div>
 					<div class="panel-body">
 						<form name="form">
-                                <div class="form-group">
-							<input class="form-control" type="email" id="txt" placeholder="Usuario" name="email"	 autofocus> 
+							<div class="form-group">
+								<input class="form-control" type="email" id="txt"
+									placeholder="Usuario" name="email" autofocus>
 							</div>
-                                <div class="form-group">
-							<input class="form-control" id = "num" placeholder="Contraseña" name="password" type="password">
+							<div class="form-group">
+								<input class="form-control" id="num" placeholder="Contraseña"
+									name="password" type="password">
 							</div>
-                                
-							<input type="button" class="btn btn-lg btn-success btn-block"value="Iniciar Sesion..." onclick="usrpas()">
+
+							<input type="button" class="btn btn-lg btn-success btn-block"
+								value="Iniciar Sesion..." onclick="usrpas()"> 
+								<a href="/todo/src/index.html" class="btn btn-lg btn-success btn-block">Volver al inicio...</a>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<script>
 		function usrpas() {
-			if ((document.form.txt.value == "claudioflores@gmail.com"
-					&& document.form.num.value == "fclaudio")||(document.form.txt.value == "kevin@gmail.com"
-						&& document.form.num.value == "kevin") || (document.form.txt.value == "casesa97@gmail.com"
-							&& document.form.num.value == "Aishiteru1234")) {
+			if ((document.form.txt.value == "claudioflores@gmail.com" && document.form.num.value == "fclaudio")
+					|| (document.form.txt.value == "kevin@gmail.com" && document.form.num.value == "kevin")
+					|| (document.form.txt.value == "casesa97@gmail.com" && document.form.num.value == "Aishiteru1234")) {
 				window.location = "index.zul"
 			} else {
 				alert("Error en Usuario o Contraseña. Intenta de nuevo.")
 			}
 		}
 		document.oncontextmenu = new Function("return false");
+	</script>
+	<script Language="JavaScript">
+		window.onload = function() {
+			if (typeof history.pushState === "function") {
+				history.pushState("jibberish", null, null);
+				window.onpopstate = function() {
+					history.pushState('newjibberish', null, null);
+					// Handle the back (or forward) buttons here
+					// Will NOT handle refresh, use onbeforeunload for this.
+				};
+			} else {
+				var ignoreHashChange = true;
+				window.onhashchange = function() {
+					if (!ignoreHashChange) {
+						ignoreHashChange = true;
+						window.location.hash = Math.random();
+						// Detect and redirect change here
+						// Works in older FF and IE9
+						// * it does mess with your hash symbol (anchor?) pound sign
+						// delimiter on the end of the URL
+					} else {
+						ignoreHashChange = false;
+					}
+				};
+			}
+		}
 	</script>
 
 
@@ -71,8 +100,8 @@
 	<!-- Metis Menu Plugin JavaScript -->
 	<!-- 	<script src="js/metisMenu/metisMenu.min.js"></script> -->
 
-<!-- 	Custom Theme JavaScript -->
-		<script src="/js/sb-admin-2.js"></script>
+	<!-- 	Custom Theme JavaScript -->
+	<script src="/js/sb-admin-2.js"></script>
 
 </body>
 
