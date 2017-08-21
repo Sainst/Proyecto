@@ -8,7 +8,6 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>INICIO</title>
-
 <link
 	href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext'
 	rel='stylesheet' type='text/css'>
@@ -24,6 +23,18 @@
 </head>
 
 <body>
+	<div id="fb-root"></div>
+	<script>
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id))
+				return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.10";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
 	<div class="navbar">
 		<div class="navbar-inner">
 			<div class="container">
@@ -42,7 +53,8 @@
 						<li class="active"><a href="#home">Inicio</a></li>
 						<li><a href="#service">Servicios</a></li>
 						<li><a href="#clima">Tiempo de la ciudad</a></li>
-						<li><a href="/todo/Map.html">Contactos</a></li>	
+						<li><a href="#like">Like y Comenta</a></li>
+						<li><a href="/todo/Map.html">Contactos</a></li>
 					</ul>
 				</div>
 				<!-- End main navigation -->
@@ -62,9 +74,11 @@
 				<div class="da-slide">
 					<h2 class="fittext2">Bienvenidos a premiumcar SA</h2>
 					<h4>Mision</h4>
-					<p>Nuestra misión es prestar un excelente servicio de movilidad tipo taxi, teniendo como principio la mejor atención al cliente, 
-					el uso de tecnología y la motivación de nuestros colaboradores, dando a nuestros clientes un servicio eficiente, honorable, 
-					ético y responsable.</p>
+					<p>Nuestra misión es prestar un excelente servicio de movilidad
+						tipo taxi, teniendo como principio la mejor atención al cliente,
+						el uso de tecnología y la motivación de nuestros colaboradores,
+						dando a nuestros clientes un servicio eficiente, honorable, ético
+						y responsable.</p>
 					<a href="/todo/login.html" class="da-link button">Iniciar
 						Sesion...</a>
 					<div class="da-img">
@@ -78,8 +92,10 @@
 				<div class="da-slide">
 					<h2>Bienvenidos a premiumcar SA</h2>
 					<h4>Vision</h4>
-					<p>Ser una empresa reconocida a nivel nacional por el servicio de movilidad en la modalidad de taxi , 
-					cuyo sinónimo sea de eficiencia y continuo mejoramiento en la calidad de servicio que brinda...</p>
+					<p>Ser una empresa reconocida a nivel nacional por el servicio
+						de movilidad en la modalidad de taxi , cuyo sinónimo sea de
+						eficiencia y continuo mejoramiento en la calidad de servicio que
+						brinda...</p>
 					<a href="/todo/public_view.zul" class="da-link button">Vista
 						Pagos - Taxistas</a>
 					<div class="da-img">
@@ -96,10 +112,11 @@
 		</div>
 		<!-- End home section -->
 	</div>
-
+	<!-- Load Facebook SDK for JavaScript -->
 	<!-- Service section start -->
 	<div class="section primary-section" id="service">
-		</br> </br>
+		</br>
+		</br>
 		<div class="container">
 			<!-- Start title section -->
 			<div class="title">
@@ -157,20 +174,45 @@
 				<!--Simple description for section goes here. -->
 			</div>
 			<div class="row-fluid">
-					<div id="cont_83e9353fb3c9166c48c7949731f5a108"><script type="text/javascript" async src="https://www.tiempo.com/wid_loader/83e9353fb3c9166c48c7949731f5a108"></script></div>
+				<div id="cont_83e9353fb3c9166c48c7949731f5a108">
+					<script type="text/javascript" async
+						src="https://www.tiempo.com/wid_loader/83e9353fb3c9166c48c7949731f5a108"></script>
+				</div>
 			</div>
 		</div>
 		</br>
 	</div>
 	<!-- Contact section edn -->
+	<div class="section primary-section" id="like">
+		<div class="container">
+			<!-- Start title section -->
+			<div class="title">
+				<h1>Siganos y dejenos sus comentarios</h1>
+				<!-- Section's title goes here -->
+				<p>................</p>
+				<!--Simple description for section goes here. -->
+			</div>
+			<div class="row-fluid">
+				<center>
+					<div class="fb-like" data-href="https://www.facebook.com/Sainst/"
+						data-width="50px" data-layout="button_count" data-action="like"
+						data-size="small" data-show-faces="true" data-share="true"></div>
+					</br>
+					<div class="fb-comments"
+						data-href="https://www.facebook.com/Sainst/" data-numposts="1"></div>
+				</center>
+			</div>
+		</div>
+		</br>
+	</div>
 	<!-- Footer section start -->
 	<div class="footer">
 		<footer id="pie">
 			<center>
 				<img id="image" src="/todo/img/logo_uleam.png" width=5% /> &#169;
-				Copyright 2017, "PremiumCar" Compañia, Derechos Reservados (Carreño
-				Lucas Sergio Saul - Mecias Chica Kevin Josue - Ingenieria en
-				Software) <img id="image" src="/todo/img/logo_facci.png" width=13% />
+				Copyright 2017, "PremiumCar" - Derechos Reservados (Carreño Lucas
+				Sergio - Mecias Chica Kevin - Ingenieria en Software) <img
+					id="image" src="/todo/img/logo_facci.png" width=13% />
 			</center>
 			</center>
 		</footer>
@@ -220,4 +262,26 @@
 		}
 	</script>
 </body>
+<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId : 'fb-root',
+			autoLogAppEvents : true,
+			xfbml : true,
+			version : 'v2.10'
+		});
+		FB.AppEvents.logPageView();
+	};
+
+	(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {
+			return;
+		}
+		js = d.createElement(s);
+		js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
 </html>
