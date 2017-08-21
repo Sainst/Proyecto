@@ -3,7 +3,14 @@
 <zk xmlns:n="http://www.w3.org/1999/xhtml">
 	<window id="win" title=".............." width="100%" border="normal"
 		apply="Controlador.EventController">
-
+		<menubar id="Menu">
+			<menuitem id="delete" label="Eliminar..." image="/img/Del.png"
+				onClick="alert(self.label)"><attribute name="onClick"><![CDATA[
+    Messagebox.show("Se ha eliminado el usuario...", "Information", Messagebox.OK, Messagebox.INFORMATION);
+]]></attribute></menuitem>
+				<menuitem id="volverw" label="volver..." href="index.zul"
+				image="/img/oper.png" onClick="alert(self.label)" />
+				</menubar>
 		<panel id="panel" title="Eliminar Usuarios..." framable="true"
 			width="100%" maximizable="true" minimizable="false" border="normal"
 			collapsible="true" closable="false"
@@ -105,29 +112,9 @@
 						<space />
 					</groupbox>
 					<space />
-
-
 				</hbox>
-
 			</panelchildren>
-
 		</panel>
 		<space />
-		<groupbox>
-			<space />
-			<caption label="Opciones..." />
-			<button id="delete" label="Borrar..." width="36px"
-				height="24px">
-				<attribute name="onClick"><![CDATA[
-    Messagebox.show("Se ha eliminado el usuario...", "Information", Messagebox.OK, Messagebox.INFORMATION);
-]]></attribute>
-            </button>
-			<button id="Volver" label="Volver.." href="index.zul"
-				width="46px" height="24px" />
-			<!-- 		<button id="delete" label="Delete" width="46px" height="24px"/> -->
-		</groupbox>
-		<space />
-
-
 	</window>
 </zk>

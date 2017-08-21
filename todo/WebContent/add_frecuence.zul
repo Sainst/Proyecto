@@ -4,7 +4,14 @@
 	<space />
 	<window id="win" title="..............." width="100%"
 		border="normal" apply="Controlador.FrecuenceController">
-
+		<menubar id="Menu">
+			<menuitem id="add" label="Agregar..." image="/img/Add.png"
+				onClick="alert(self.label)"><attribute name="onClick"><![CDATA[
+    Messagebox.show("Se ha registrado un nuevo Pago...", "Information", Messagebox.OK, Messagebox.INFORMATION);
+]]></attribute></menuitem>
+				<menuitem id="volverw" label="volver..." href="index.zul"
+				image="/img/oper.png" onClick="alert(self.label)" />
+				</menubar>
 		<panel id="panel" title="Cancelar Pago..." framable="true"
 			width="100%" maximizable="true" minimizable="false" border="normal"
 			collapsible="true" closable="false"
@@ -52,23 +59,6 @@
 				<space />
 			</panelchildren>
 		</panel>
-		<space />
-		<groupbox>
-			<caption label="Opciones..." />
-			<button id="add" label="Agregar" width="36px" height="24px" >
-				<attribute name="onClick"><![CDATA[
-    Messagebox.show("Se ha registrado un nuevo pago...", "Information", Messagebox.OK, Messagebox.INFORMATION);
-]]></attribute>
-            </button>
-			<button id="update" label="Actualizar" width="46px"
-				height="24px" disabled="false" >
-				<attribute name="onClick"><![CDATA[
-    Messagebox.show("Se ha actualizado el pago seleccionado...", "Information", Messagebox.OK, Messagebox.INFORMATION);
-]]></attribute>
-            </button>
-			<button id="Volver" label="Volver.." href="index.zul"
-				width="46px" height="24px" />
-		</groupbox>
 		<space />
 		<panel id="panel2" title="Informacion de Pagos Registrados..."
 			framable="true" width="100%" maximizable="true" minimizable="false"

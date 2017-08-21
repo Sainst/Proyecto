@@ -4,9 +4,16 @@
 	<window id="win" title=".............." width="100%" border="normal"
 		apply="Controlador.AdminController">
 		<menubar id="Menu">
+		<menuitem id="add" label="Agregar..." image="/img/Add.png"
+				onClick="alert(self.label)"><attribute name="onClick"><![CDATA[
+    Messagebox.show("Se ha registrado un nuevo miembro del personal...", "Information", Messagebox.OK, Messagebox.INFORMATION);
+]]></attribute></menuitem>
+				<menuitem id="volverw" label="volver..." href="index.zul"
+				image="/img/oper.png" onClick="alert(self.label)" />
 			<menuitem label="Estados..." disabled = "true" image="/img/states.png" onClick="alert(self.label)" href=""/>
 			<menuitem label="Tipos..." disabled = "true" image="/img/typeadd.png" onClick="alert(self.label)" href=""/>
 		</menubar>
+			
 		<panel id="panel"
 			title="Agregar Nuevo Miembro Administrativo..." framable="true"
 			width="100%" maximizable="true" minimizable="false" border="normal"
@@ -112,16 +119,5 @@
 			</panelchildren>
 		</panel>
 		<space />
-		<groupbox>
-			<caption label="Opciones..." />
-			<button id="add" label="Agregar" width="36px" height="24px">
-				<attribute name="onClick"><![CDATA[
-    Messagebox.show("Se ha registrado un nuevo administrador...", "Information", Messagebox.OK, Messagebox.INFORMATION);
-]]></attribute>
-            </button>
-			<button id="Volver" label="Volver.." href="index.zul"
-				width="46px" height="24px" />
-		</groupbox>
-
 	</window>
 </zk>

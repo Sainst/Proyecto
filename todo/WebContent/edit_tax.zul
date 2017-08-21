@@ -3,6 +3,14 @@
 <zk xmlns:n="http://www.w3.org/1999/xhtml">
 	<window id="win" title="Actualizar informacion del taxi..."
 		width="100%" border="normal" apply="Controlador.EventController">
+		<menubar id="Menu">
+			<menuitem id="update" label="Actualizar..."
+				image="/img/Edit.png" onClick="alert(self.label)"><attribute name="onClick"><![CDATA[
+    Messagebox.show("Se ha actualizado este Usuario...", "Information", Messagebox.OK, Messagebox.INFORMATION);
+]]></attribute></menuitem>
+				<menuitem id="volverw" label="volver..." href="index.zul"
+				image="/img/oper.png" onClick="alert(self.label)" />
+				</menubar>
 		<panel id="panel" title="Editar informacion de Usuario..."
 			framable="true" width="100%" maximizable="true" minimizable="false"
 			border="normal" collapsible="true" closable="false"
@@ -149,22 +157,8 @@
 						<n:br />
 						<space />
 					</groupbox>
-
 				</hbox>
 			</panelchildren>
-
 		</panel>
-		<groupbox>
-			<caption label="Opciones..." />
-			<button id="update" label="Actualizar" width="46px"
-				height="24px">
-				<attribute name="onClick"><![CDATA[
-    Messagebox.show("Se ha actualizado este Usuario...", "Information", Messagebox.OK, Messagebox.INFORMATION);
-]]></attribute>
-            </button>
-			<button id="Volver" label="Volver.." href="index.zul"
-				width="46px" height="24px" />
-
-		</groupbox>
 	</window>
 </zk>

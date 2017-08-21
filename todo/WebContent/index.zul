@@ -41,13 +41,13 @@
 						image="/img/secre.png" />
 					<menuitem label="Eliminar Vehiculo..."
 						onClick="alert(self.label)" href="del_vehiculol.zul"
-						disabled = "true" image="/img/Del.png" />
+						disabled = "false" image="/img/Del.png" />
 					<menuseparator></menuseparator>
 				</menupopup>
 			</menu>
 			<menuitem label="Frecuencia..." href="add_frecuence.zul"
 				image="/img/freq.png" onClick="alert(self.label)" />
-			<menuitem label="Salir..." href="/src/index.html"
+			<menuitem label="Salir..." href="login.html"
 				image="/img/lol.png" onClick="alert(self.label)" />
 		</menubar>
 		<iframe id="iframe" src="view_taxista.zul" width="100%"

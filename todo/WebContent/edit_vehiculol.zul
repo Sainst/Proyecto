@@ -3,6 +3,14 @@
 <zk xmlns:n="http://www.w3.org/1999/xhtml">
 	<window id="win" title=".............." width="100%" border="normal"
 		apply="Controlador.VehiculoController">
+		<menubar id="Menu">
+			<menuitem id="update" label="Actualizar..."
+				image="/img/Edit.png" onClick="alert(self.label)"><attribute name="onClick"><![CDATA[
+    Messagebox.show("Se ha actualizado este Vehiculo...", "Information", Messagebox.OK, Messagebox.INFORMATION);
+]]></attribute></menuitem>
+				<menuitem id="volverw" label="volver..." href="index.zul"
+				image="/img/oper.png" onClick="alert(self.label)" />
+				</menubar>
 		<panel id="panel" title="Editar informacion de vehiculo..."
 			framable="true" width="100%" maximizable="true" minimizable="false"
 			border="normal" collapsible="true" closable="false">

@@ -3,6 +3,14 @@
 <zk xmlns:n="http://www.w3.org/1999/xhtml">
 	<window id="win" title="Esta es la parte de Borrar..." width="100%"
 		border="normal" apply="Controlador.VehiculoController">
+		<menubar id="Menu">
+			<menuitem id="delete" label="Eliminar..."
+				image="/img/Del.png" onClick="alert(self.label)"><attribute name="onClick"><![CDATA[
+    Messagebox.show("Se ha eliminado el Vehiculo...", "Information", Messagebox.OK, Messagebox.INFORMATION);
+]]></attribute></menuitem>
+				<menuitem id="volverw" label="volver..." href="index.zul"
+				image="/img/oper.png" onClick="alert(self.label)" />
+				</menubar>
 		<panel id="panel" title="Eliminar Vehiculos..." framable="true"
 			width="100%" maximizable="true" minimizable="false" border="normal"
 			collapsible="true" closable="false">
@@ -60,17 +68,6 @@
 					<n:br />
 				</groupbox>
 			</panelchildren>
-
 		</panel>
-		<groupbox>
-			<space />
-			<caption label="Opciones..." />
-			<button id="delete" label="Borrar..." width="36px"
-				height="24px" />
-			<button id="Volver" label="Volver.." href="index.zul"
-				width="46px" height="24px" />
-			<!-- 			<button id="delete" label="Delete" width="46px" -->
-			<!-- 				height="24px" disabled="true" /> -->
-		</groupbox>
 	</window>
 </zk>
