@@ -15,7 +15,7 @@
 			framable="true" width="100%" maximizable="true" minimizable="false"
 			border="normal" collapsible="true" closable="false">
 			<panelchildren>
-				<listbox id="box" multiple="true" rows="8"
+				<listbox id="box" multiple="true" rows="10"
 					model="@{win$composer.allVehiculos, load-after='update.onClick'}"
 					selectedItem="@{win$composer.datove}" vflex="true">
 					<listhead>
@@ -118,16 +118,5 @@
 				</hbox>
 			</panelchildren>
 		</panel>
-		<groupbox>
-			<caption label="Opciones..." />
-			<button id="update" label="Actualizar" width="46px"
-				height="24px" >
-				<attribute name="onClick"><![CDATA[
-    Messagebox.show("Se ha actualizado este Vehiculo...", "Information", Messagebox.OK, Messagebox.INFORMATION);
-]]></attribute>
-            </button>
-			<button id="Volver" label="Volver.." href="index.zul"
-				width="46px" height="24px" />
-		</groupbox>
 	</window>
 </zk>

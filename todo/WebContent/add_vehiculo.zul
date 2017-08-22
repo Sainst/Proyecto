@@ -70,18 +70,13 @@
 						<space />
 					</groupbox>
 					<space />
-				</hbox>
-				<space />
-			</panelchildren>
-		</panel>
-		<space />
-		<panel id="panel2" title="Informacion de Vehiculos"
+					<panel id="panel2" title="Informacion de Vehiculos"
 			framable="true" width="100%" maximizable="true" minimizable="false"
 			border="normal" collapsible="true" closable="false"
 			onClose='alert("Panel is closed");'
 			onMinimize='alert("Panel is minimized");'>
 			<panelchildren>
-				<listbox id="box1" multiple="true" rows="8"
+				<listbox id="box1" multiple="true" rows="10"
 					model="@{win$composer.allVehiculos}"
 					selectedItem="@{win$composer.datove}" vflex="true">
 					<listhead>
@@ -100,5 +95,11 @@
 				</listbox>
 			</panelchildren>
 		</panel>
+				</hbox>
+				<space />
+			</panelchildren>
+		</panel>
+		<space />
+		
 	</window>
 </zk>

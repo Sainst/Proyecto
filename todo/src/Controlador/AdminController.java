@@ -1,10 +1,9 @@
 package Controlador;
 
-import java.util.List;
+import java.util.*;
 //import java.util.UUID;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.Listbox;
-
 import Modelo.DatoAdmin;
 
 public class AdminController extends GenericForwardComposer{

@@ -2,12 +2,8 @@
 	<?page title="Pagina"?>
 	<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
 	<window id="win"  width="100%" height="100%" border="false" apply="Controlador.EventController, Controlador.VehiculoController">
-
-
-		<panel id="panel3" title="Taxistas..." framable="true"
-			width="100%" maximizable="false" minimizable="false" border="normal"
-			collapsible="true" closable="true"
-			onClose='alert("Panel is closed");'
+		<panel id="panel3" title="Taxistas..." framable="true" width="100%" maximizable="false" minimizable="false" border="normal"
+			collapsible="true" closable="true" onClose='alert("Panel is closed");'
 			onMinimize='alert("Panel is minimized");'>
 			<panelchildren>
 				<listbox id="box" multiple="true" rows="6"
