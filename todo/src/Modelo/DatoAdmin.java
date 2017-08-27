@@ -16,7 +16,6 @@ public class DatoAdmin {
 
 	public DatoAdmin(String n_cedula_admi, String id_cargo, String abr_estado, String nombres, String apellidos,
 			String fecha_nacimiento, String telefono, String email, String tipo_sangre) {
-		
 		this.n_cedula_admi = n_cedula_admi;
 		this.id_cargo = id_cargo;
 		this.abr_estado = abr_estado;

@@ -95,7 +95,7 @@ public class Frecuence {
 			conn = DriverManager.getConnection(url, user, pwd);
 		    stmt = conn.createStatement();				
 		    
-			if (stmt.executeUpdate("update pagos set n_cedula_tax= '" + frc.getN_cedula_tax() +
+			if (stmt.executeUpdate("update pagos set id_pago= '"+ frc.getId_pago()+"', n_cedula_tax= '" + frc.getN_cedula_tax() +
 					"', fecha= '" + frc.getFecha() +"', estado= '" + frc.getEstado() + "', valor_cancelado= " + frc.getValor_cancelado() +" where id_pago= '" + frc.getId_pago() + "'") > 0);
 			result = true;
 		} catch (SQLException e) {

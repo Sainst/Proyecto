@@ -3,7 +3,7 @@ package Controlador;
 /**
  * Event DAO.
  * 
- * @author Derechos Reservados...
+ * @author robbiecheng
  */
 
 import java.sql.Connection;

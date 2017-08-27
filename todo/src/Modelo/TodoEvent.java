@@ -1,5 +1,11 @@
 package Modelo;
 
+/* Event.
+ * @author Derechos_de_autor_reservados...
+ */
+
+//import java.util.Date;
+
 public class TodoEvent {
 	private String n_cedula_tax;
 	private String n_matricula;

@@ -1,0 +1,44 @@
+<?page title="Pagina"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
+<zk xmlns:n="http://www.w3.org/1999/xhtml">
+	<window id="win" width="100%" height="100%" border="false"
+		apply="Controlador.AdministradorController">
+		<panel id="panel3" title="Taxistas..." framable="true"
+			width="100%" maximizable="false" minimizable="false" border="normal"
+			collapsible="true" closable="true"
+			onClose='alert("Panel is closed");'
+			onMinimize='alert("Panel is minimized");'>
+			<panelchildren>
+				<listbox id="box" multiple="true" rows="6"
+					model="@{win$composer.allAdmins}"
+					selectedItem="@{win$composer.current}" vflex="true">
+					<listhead>
+						<listheader label="Cedula" width="90px" />
+						<listheader label="Cargo" width="130px" />
+						<listheader label="Estado" width="130px" />
+						<listheader label="Nombres" width="130px" />
+						<listheader label="Apelllidos" width="90px" />
+						<listheader label="Fecha de Nacimiento"
+							width="130px" />
+						<listheader label="Telefono" width="140px" />
+						<listheader label="Correo" width="90px" />
+						<listheader label="Grupo Sanguineo"
+							width="90px" />
+					</listhead>
+					<listitem self="@{each='admin'}" value="@{admin}">
+						<listcell label="@{admin.n_cedula_admin}" />
+						<listcell label="@{admin.id_cargo}" />
+						<listcell label="@{admin.abr_estado}" />
+						<listcell label="@{admin.nombres}" />
+						<listcell label="@{admin.apellidos}" />
+						<listcell label="@{admin.fecha_nacimiento}" />
+						<listcell label="@{admin.telefono}" />
+						<listcell label="@{admin.email}" />
+						<listcell label="@{admin.tipo_sangre}" />
+					</listitem>
+				</listbox>
+			</panelchildren>
+		</panel>
+
+	</window>
+</zk>
