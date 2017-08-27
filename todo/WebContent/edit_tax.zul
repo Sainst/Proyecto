@@ -47,7 +47,7 @@
 
 			</panelchildren>
 		</panel>
-		<panel id="panel2" title="Informacion de usuario a eliminar"
+		<panel id="panel2" title="Informacion de usuario a modificar"
 			framable="true" width="100%" maximizable="true" minimizable="false"
 			border="normal" collapsible="true" closable="false"
 			onClose='alert("Panel is closed");'

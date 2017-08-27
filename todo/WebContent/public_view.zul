@@ -1,7 +1,7 @@
 <?page title="Vista Taxista - Pagos" ?>
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
 <zk xmlns:n="http://www.w3.org/1999/xhtml">
-	<window title="Vista Publica..." height="60%" border="normal">
+	<window title="Vista Publica..." height="92%" border="normal">
 		<menubar id="Menu">
 			<menuitem label="Salir..." href="/src/index.html"
 				image="/img/lol.png" onClick="alert(self.label)" />
@@ -10,5 +10,7 @@
 			height="160px" style="border: 0px solid gray" />
 		<iframe id="iframe2" src="view_frecuence.zul" width="100%"
 			height="185px" style="border: 0px solid gray" />
+		<iframe id="iframe1" src="view_administrador.zul" width="100%"
+			height="200px" style="border: 0px solid gray" />
 	</window>
 </zk>

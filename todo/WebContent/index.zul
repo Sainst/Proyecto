@@ -2,49 +2,57 @@
 	<?page title="Administracion - Pagina Principal"?>
 	<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
 	<window id="win" title="Marco de Opciones..." width="100%"
-		height="60%" border="normal">
+		height="90%" border="normal">
 		<menubar id="Menu">
-			<menu label="Registro..." image="/img/Add.png">
+			<menu label="Menu" image="/img/main.png">
 				<menupopup>
-					<menuitem label="Registrar Nuevo Taxista..."
-						onClick="alert(self.label)" href="add_tax.zul"
-						image="/img/user.png" />
-					<menuitem label="Registrar Nuevo Personal..."
-						disabled="false" onClick="alert(self.label)" href="add_admin.zul"
-						image="/img/secre.png" />
-					<menuitem label="Registrar Nuevo Vehiculo..."
-						onClick="alert(self.label)" href="add_vehiculo.zul"
-						image="/img/Del.png" />
-					<menuseparator></menuseparator>
+					<menu label="Agregar Nuevo..."
+						image="/img/Add.png">
+						<menupopup>
+							<menuitem label="Taxista..."
+								onClick="alert(self.label)" href="add_tax.zul"
+								image="/img/user.png" />
+							<menuitem label="Personal..." disabled="false"
+								onClick="alert(self.label)" href="add_admin.zul"
+								image="/img/secre.png" />
+							<menuitem label="Vehiculo..."
+								onClick="alert(self.label)" href="add_vehiculo.zul"
+								image="/img/Del.png" />
+							<menuseparator></menuseparator>
+						</menupopup>
+					</menu>
+					<menu label="Actualizar registro..." image="/img/Edit.png">
+						<menupopup>
+							<menuitem label="Taxista..."
+								onClick="alert(self.label)" href="edit_tax.zul"
+								image="/img/user.png" />
+							<menuitem label="Personal..."
+								disabled="false" onClick="alert(self.label)"
+								href="edit_admin.zul" image="/img/secre.png" />
+							<menuitem label="Vehiculo..."
+								onClick="alert(self.label)" href="edit_vehiculol.zul"
+								image="/img/Del.png" />
+							<menuseparator></menuseparator>
+						</menupopup>
+					</menu>
+					<menu label="ELiminar registro..." image="/img/delete.png">
+						<menupopup>
+							<menuitem label="Taxista..."
+								onClick="alert(self.label)" href="del_tax.zul"
+								image="/img/user.png" />
+							<menuitem label="Personal..."
+								disabled="false" href="del_admin.zul" onClick="alert(self.label)"
+								image="/img/secre.png" />
+							<menuitem label="Vehiculo..."
+								onClick="alert(self.label)" href="del_vehiculol.zul"
+								disabled="false" image="/img/Del.png" />
+							<menuseparator></menuseparator>
+						</menupopup>
+					</menu>
+
 				</menupopup>
 			</menu>
-			<menu label="Actualizar..." image="/img/Edit.png">
-				<menupopup>
-					<menuitem label="Editar Taxista..."
-						onClick="alert(self.label)" href="edit_tax.zul"
-						image="/img/user.png" />
-					<menuitem label="Editar Personal..." disabled="true"
-						onClick="alert(self.label)" href="edit_admin.zul" image="/img/secre.png" />
-					<menuitem label="Editar Vehiculo..."
-						onClick="alert(self.label)" href="edit_vehiculol.zul"
-						image="/img/Del.png" />
-					<menuseparator></menuseparator>
-				</menupopup>
-			</menu>
-			<menu label="ELiminar..." image="/img/delete.png">
-				<menupopup>
-					<menuitem label="Eliminar Taxista..."
-						onClick="alert(self.label)" href="del_tax.zul"
-						image="/img/user.png" />
-					<menuitem label="Eliminar Personal..."
-						disabled="true" onClick="alert(self.label)"
-						image="/img/secre.png" />
-					<menuitem label="Eliminar Vehiculo..."
-						onClick="alert(self.label)" href="del_vehiculol.zul"
-						disabled = "false" image="/img/Del.png" />
-					<menuseparator></menuseparator>
-				</menupopup>
-			</menu>
+
 			<menuitem label="Frecuencia..." href="add_frecuence.zul"
 				image="/img/freq.png" onClick="alert(self.label)" />
 			<menuitem label="Salir..." href="login.html"
@@ -54,7 +62,7 @@
 			height="160px" style="border: 0px solid gray" />
 		<iframe id="iframe2" src="view_frecuence.zul" width="100%"
 			height="185px" style="border: 0px solid gray" />
-<!-- 		<iframe id="iframe1" src="" width="100%" height="200px" -->
-<!-- 			style="border: 0px solid gray" /> -->
+		<iframe id="iframe1" src="view_administrador.zul" width="100%"
+			height="200px" style="border: 0px solid gray" />
 	</window>
 </zk>

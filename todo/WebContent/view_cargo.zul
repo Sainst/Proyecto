@@ -1,0 +1,28 @@
+<?page title="Pagina"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
+<zk xmlns:n="http://www.w3.org/1999/xhtml">
+	<window id="win" width="100%" height="100%" border="false"
+		apply="Controlador.CargoController">
+
+		<panel id="panel3" title="Cargos..." framable="true" width="100%"
+			maximizable="false" minimizable="false" border="normal"
+			collapsible="true" closable="true"
+			onClose='alert("Panel is closed");'
+			onMinimize='alert("Panel is minimized");'>
+			<panelchildren>
+				<listbox id="box" multiple="true" rows="4"
+					model="@{win$composer.AllCargos}"
+					selectedItem="@{win$composer.current}" vflex="true">
+					<listhead>
+						<listheader label="Identificador" width="50px" />
+						<listheader label="Cargo" width="50px" />
+					</listhead>
+					<listitem self="@{each='cargo'}" value="@{cargo}">
+						<listcell label="@{cargo.id_cargo}" />
+						<listcell label="@{cargo.cargo}" />
+					</listitem>
+				</listbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

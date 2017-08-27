@@ -1,0 +1,28 @@
+<?page title="Pagina"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
+<zk xmlns:n="http://www.w3.org/1999/xhtml">
+	<window id="win" width="100%" height="100%" border="false"
+		apply="Controlador.EstadoController">
+
+		<panel id="panel3" title="Estados..." framable="true" width="100%"
+			maximizable="false" minimizable="false" border="normal"
+			collapsible="true" closable="true"
+			onClose='alert("Panel is closed");'
+			onMinimize='alert("Panel is minimized");'>
+			<panelchildren>
+				<listbox id="box" multiple="true" rows="2"
+					model="@{win$composer.AllEstados}"
+					selectedItem="@{win$composer.current}" vflex="true">
+					<listhead>
+						<listheader label="Identificador" width="50px" />
+						<listheader label="Estado" width="50px" />
+					</listhead>
+					<listitem self="@{each='estado'}" value="@{estado}">
+						<listcell label="@{estado.abr_estado}" />
+						<listcell label="@{estado.estado}" />
+					</listitem>
+				</listbox>
+			</panelchildren>
+		</panel>
+	</window>
+</zk>

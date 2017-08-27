@@ -1,0 +1,158 @@
+<?page title="Modificacion"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
+<zk xmlns:n="http://www.w3.org/1999/xhtml">
+	<window id="win" title="Actualizar informacion del personal..."
+		width="100%" border="normal"
+		apply="Controlador.AdministradorController">
+		<menubar id="Menu">
+			<menuitem id="update" label="Actualizar..."
+				image="/img/Edit.png" onClick="alert(self.label)"><attribute name="onClick"><![CDATA[
+    Messagebox.show("Se ha actualizado este Usuario...", "Information", Messagebox.OK, Messagebox.INFORMATION);
+]]></attribute></menuitem>
+				<menuitem id="volverw" label="volver..." href="index.zul"
+				image="/img/oper.png" onClick="alert(self.label)" />
+		
+		</menubar>
+				<panel id="panel3" title="Admisnitracion..." framable="true"
+			width="100%" maximizable="false" minimizable="false" border="normal"
+			collapsible="true" closable="true"
+			onClose='alert("Panel is closed");'
+			onMinimize='alert("Panel is minimized");'>
+			<panelchildren>
+				<listbox id="box" multiple="true" rows="9"
+					model="@{win$composer.AllAdministradores}"
+					selectedItem="@{win$composer.current}" vflex="true">
+					<listhead>
+						<listheader label="Cedula" width="50px" />
+						<listheader label="Cargo" width="50px" />
+						<listheader label="Estado" width="50px" />
+						<listheader label="Nombres" width="180px" />
+						<listheader label="Apelllidos" width="180px" />
+						<listheader label="Fecha de Nacimiento"
+							width="130px" />
+						<listheader label="Telefono" width="140px" />
+						<listheader label="Correo" width="140px" />
+						<listheader label="Grupo Sanguineo"
+							width="90px" />
+					</listhead>
+					<listitem self="@{each='administrador'}" value="@{administrador}">
+						<listcell label="@{administrador.n_cedula_admi}" />
+						<listcell label="@{administrador.id_cargo}" />
+						<listcell label="@{administrador.abr_estado}" />
+						<listcell label="@{administrador.nombres}" />
+						<listcell label="@{administrador.apellidos}" />
+						<listcell label="@{administrador.fecha_nacimiento}" />
+						<listcell label="@{administrador.telefono}" />
+						<listcell label="@{administrador.email}" />
+						<listcell label="@{administrador.tipo_sangre}" />
+					</listitem>
+				</listbox>
+			</panelchildren>
+		</panel>
+							<panel id="panel2" title="Informacion de personal a modificar"
+			framable="true" width="100%" maximizable="true" minimizable="false"
+			border="normal" collapsible="true" closable="false"
+			onClose='alert("Panel is closed");'
+			onMinimize='alert("Panel is minimized");'>
+			<panelchildren>
+			<hbox>
+					<groupbox>
+						<n:br />
+						<caption label="" />
+						<textbox id="textbox1" value="================"
+							cols="20" readonly="true" />
+						<n:br />
+						<textbox id="textbox2" value="Estados: "
+							cols="20" readonly="true" />
+						<n:br />
+						<textbox id="textbox3" value="Activo: ACT"
+							cols="20" readonly="true" />
+						<n:br />
+						<textbox id="textbox4" value="Inactivo: INAC"
+							cols="20" readonly="true" />
+						<n:br />
+						<textbox id="textbox5" value="Cargos: "
+							cols="20" readonly="true" />
+						<n:br />
+						<textbox id="textbox6" value="Secretari@: SRC"
+							cols="20" readonly="true" />
+						<n:br />
+						<textbox id="textbox7" value="Operari@: OPR"
+							cols="20" readonly="true" />
+						<n:br />
+						<textbox id="textbox8" value="Soci@s: SCO"
+							cols="20" readonly="true" />
+						<n:br />
+						<textbox id="textbox9" value="================"
+							cols="20" readonly="true" />
+						<n:br />
+					</groupbox>
+					<image id="image" src="img/human-resources.png"
+						width="250px" />
+					<groupbox>
+						<n:br />
+						<caption label="Ingrese Datos..." />
+						Numero de Cedula: XXXXXXXXXX
+						<n:br />
+						<textbox id="n_cedula_admi" cols="25"
+							value="@{win$composer.current.n_cedula_admi}" readonly="true"/>
+						<n:br />
+						Cargo: Ej: Secretaria - SCR
+						<n:br />
+						<textbox id="id_cargo" cols="25"
+							value="@{win$composer.current.id_cargo}" />
+						<n:br />
+						Estado: Activo - ACT -- Inactivo - INAC
+						<n:br />
+						<textbox id="abr_estado" cols="25"
+							value="@{win$composer.current.abr_estado}" />
+						<n:br />
+						Nombres: XXXXXXXX XXXXXXXX
+						<n:br />
+						<textbox id="nombres" cols="25"
+							value="@{win$composer.current.nombres}" />
+						<n:br />
+						Apellidos: XXXXXXXX XXXXXXXX
+						<n:br />
+						<textbox id="apellidos" cols="25"
+							value="@{win$composer.current.apellidos}" />
+						<n:br />
+						<space />
+
+					</groupbox>
+					<space />
+
+					<groupbox>
+						<space />
+						<n:br />
+						<caption label="" />
+						Fecha de Nacimiento: AAAA-MM-DD
+						<n:br />
+						<textbox id="fecha_nacimiento" cols="25"
+							value="@{win$composer.current.fecha_nacimiento}" readonly="true"/>
+						<n:br />
+						Telefono: ##########
+						<n:br />
+						<textbox id="telefono" cols="25"
+							value="@{win$composer.current.telefono}" />
+						<n:br />
+						Correo: XXXXX@XXXX.XXX
+						<n:br />
+						<textbox id="email" cols="25"
+							value="@{win$composer.current.email}" />
+						<n:br />
+						Grupo Sanguineo: +/- XX
+						<n:br />
+						<textbox id="tipo_sangre" cols="25"
+							value="@{win$composer.current.tipo_sangre}" readonly="true"/>
+						<n:br />
+
+						<space />
+					</groupbox>
+					<space />
+				</hbox>
+			</panelchildren>
+			</panel>
+		
+	</window>
+</zk>
