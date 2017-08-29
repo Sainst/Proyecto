@@ -56,37 +56,6 @@
 			onMinimize='alert("Panel is minimized");'>
 			<panelchildren>
 			<hbox>
-					<groupbox>
-						<n:br />
-						<caption label="" />
-						<textbox id="textbox1" value="================"
-							cols="20" readonly="true" />
-						<n:br />
-						<textbox id="textbox2" value="Estados: "
-							cols="20" readonly="true" />
-						<n:br />
-						<textbox id="textbox3" value="Activo: ACT"
-							cols="20" readonly="true" />
-						<n:br />
-						<textbox id="textbox4" value="Inactivo: INAC"
-							cols="20" readonly="true" />
-						<n:br />
-						<textbox id="textbox5" value="Cargos: "
-							cols="20" readonly="true" />
-						<n:br />
-						<textbox id="textbox6" value="Secretari@: SRC"
-							cols="20" readonly="true" />
-						<n:br />
-						<textbox id="textbox7" value="Operari@: OPR"
-							cols="20" readonly="true" />
-						<n:br />
-						<textbox id="textbox8" value="Soci@s: SCO"
-							cols="20" readonly="true" />
-						<n:br />
-						<textbox id="textbox9" value="================"
-							cols="20" readonly="true" />
-						<n:br />
-					</groupbox>
 					<image id="image" src="img/human-resources.png"
 						width="250px" />
 					<groupbox>
@@ -150,6 +119,12 @@
 						<space />
 					</groupbox>
 					<space />
+										<groupbox style="border: 0px solid gray">
+					<iframe id="iframe1" src="view_cargo.zul"
+						width="400px" height="125px" />
+						<iframe id="iframe2" src="view_estado.zul"
+						width="400px" height="100px" style="border: 0px solid gray" />
+					</groupbox>
 				</hbox>
 			</panelchildren>
 			</panel>

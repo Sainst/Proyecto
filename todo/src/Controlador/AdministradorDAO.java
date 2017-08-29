@@ -67,47 +67,47 @@ public class AdministradorDAO {
 		return allAdministradores;
 	}
 	
-	public List findAllGS(){
-		Statement stmt = null;
-		Connection conn = null;
-		List allGSS = new ArrayList();
-		try {
-			// get connection
-			conn = DriverManager.getConnection(url, user, pwd);
-			stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("Select * from administracion where id_cargo IN ('GRT', 'SCO')");
-			
-			DatoAdministrador gss;
-			while (rs.next()){
-				gss = new DatoAdministrador();
-				gss.setN_cedula_admi(rs.getString(1));
-				gss.setId_cargo(rs.getString(2));
-				gss.setAbr_estado(rs.getString(3));
-				gss.setNombres(rs.getString(4));
-				gss.setApellidos(rs.getString(5));
-				gss.setFecha_nacimiento(rs.getString(6));
-				gss.setTelefono(rs.getString(7));
-				gss.setEmail(rs.getString(8));
-				gss.setTipo_sangre(rs.getString(9));
-				allGSS.add(gss);
-			}
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}finally{
-			try {
-				stmt.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			try {
-				conn.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		return allGSS;
-	}
+//	public List findAllGS(){
+//		Statement stmt = null;
+//		Connection conn = null;
+//		List allGSS = new ArrayList();
+//		try {
+//			// get connection
+//			conn = DriverManager.getConnection(url, user, pwd);
+//			stmt = conn.createStatement();
+//			ResultSet rs = stmt.executeQuery("Select * from administracion where id_cargo IN ('GRT', 'SCO')");
+//			
+//			DatoAdministrador gss;
+//			while (rs.next()){
+//				gss = new DatoAdministrador();
+//				gss.setN_cedula_admi(rs.getString(1));
+//				gss.setId_cargo(rs.getString(2));
+//				gss.setAbr_estado(rs.getString(3));
+//				gss.setNombres(rs.getString(4));
+//				gss.setApellidos(rs.getString(5));
+//				gss.setFecha_nacimiento(rs.getString(6));
+//				gss.setTelefono(rs.getString(7));
+//				gss.setEmail(rs.getString(8));
+//				gss.setTipo_sangre(rs.getString(9));
+//				allGSS.add(gss);
+//			}
+//			
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}finally{
+//			try {
+//				stmt.close();
+//			} catch (SQLException e) {
+//				e.printStackTrace();
+//			}
+//			try {
+//				conn.close();
+//			} catch (SQLException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//		return allGSS;
+//	}
 	
 	public boolean delete(DatoAdministrador adm){
 		Connection conn = null;
@@ -178,11 +178,12 @@ public class AdministradorDAO {
 			conn = DriverManager.getConnection(url, user, pwd);
 		    stmt = conn.createStatement();				
 		    
-			if (stmt.executeUpdate("update administracion set n_cedula_admi'" + adm.getN_cedula_admi()
+			if (stmt.executeUpdate("update administracion set n_cedula_admi = 	'" + adm.getN_cedula_admi()
 					+ "', id_cargo = '" + adm.getId_cargo() + "', abr_estado = '" + adm.getAbr_estado()
 					+ "', nombres = '" + adm.getNombres() + "', apellidos = '" + adm.getApellidos()
 					+ "', fecha_nacimiento = '" + adm.getFecha_nacimiento() + "', telefono = '" + adm.getTelefono()
-					+ "', email = '" + adm.getEmail() + "', tipo_sangre = '" + adm.getTipo_sangre() + "')") > 0);
+					+ "', email = '" + adm.getEmail() + "', tipo_sangre = '" + adm.getTipo_sangre() + "' where n_cedula_admi = '" + adm.getN_cedula_admi() + 
+					"'") > 0);
 			result = true;
 		} catch (SQLException e) {
 			e.printStackTrace();
