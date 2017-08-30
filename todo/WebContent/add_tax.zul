@@ -73,7 +73,7 @@
 					</groupbox>
 					<vbox></vbox>
 					<iframe id="iframe1" src="view_vehiculo.zul"
-						width="500px" height="200px" style="border: 0px solid gray" />
+						width="550px" height="200px" style="border: 0px solid gray" />
 				</hbox>
 			</panelchildren>
 		</panel>

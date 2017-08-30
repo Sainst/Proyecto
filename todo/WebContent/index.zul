@@ -53,7 +53,7 @@
 				</menupopup>
 			</menu>
 
-			<menuitem label="Frecuencia..." href="add_frecuence.zul"
+			<menuitem label="Frecuencia..." href="frecuence.zul"
 				image="/img/freq.png" onClick="alert(self.label)" />
 			<menuitem label="Salir..." href="login.html"
 				image="/img/lol.png" onClick="alert(self.label)" />

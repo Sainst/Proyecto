@@ -34,9 +34,9 @@ public class FrecuenceController extends GenericForwardComposer{
 			freqdao.update((DatoFrecuence) box.getSelectedItem().getValue());
 		}
 	}
-//	public void onClick$delete() {		
-//		if (box.getSelectedItem() != null) {
-//			freqdao.delete((DatoFrecuence) box.getSelectedItem().getValue());
-//		}
-//	}
+	public void onClick$delete() {		
+		if (box.getSelectedItem() != null) {
+			freqdao.delete((DatoFrecuence) box.getSelectedItem().getValue());
+		}
+	}
 }

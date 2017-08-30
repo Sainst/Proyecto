@@ -11,16 +11,55 @@
 				<menuitem id="volverw" label="volver..." href="index.zul"
 				image="/img/oper.png" onClick="alert(self.label)" />
 				</menubar>
+				<hbox>
+						<panel id="panel2" title="Informacion de usuario a eliminar"
+			framable="true" width="500px" maximizable="true" minimizable="false"
+			border="normal" collapsible="true" closable="false"
+			onClose='alert("Panel is closed");'
+			onMinimize='alert("Panel is minimized");'>
+			<panelchildren>
+			<hbox>
+				<groupbox>
+					<n:br />
+					Numero de Placa: XXX####
+					<n:br />
+					<textbox id="n_matricula" cols="10"
+						value="@{win$composer.datove.n_matricula}" readonly="true" />
+					<n:br />
+					Marca: XXXXXXXXX
+					<n:br />
+					<textbox id="marca" cols="25"
+						value="@{win$composer.datove.marca}" readonly="true" />
+						<n:br />
+					Modelo: XXXXXXX
+					<n:br />
+					<textbox id="modelo" cols="25"
+						value="@{win$composer.datove.modelo}" readonly="true" />
+					<n:br/>
+					<n:br/>
+				</groupbox>
+				<groupbox>
+					<n:br />
+
+					Descripcion: XXXXXXXXXX
+					<n:br />
+					<textbox id="descripcion" cols="25" rows ="6"
+						value="@{win$composer.datove.descripcion}" readonly="true" />
+					<n:br />
+				</groupbox>
+				</hbox>
+			</panelchildren>
+		</panel>
 		<panel id="panel" title="Eliminar Vehiculos..." framable="true"
 			width="100%" maximizable="true" minimizable="false" border="normal"
 			collapsible="true" closable="false">
 			<panelchildren>
 				<space />
-				<listbox id="box" multiple="true" rows="5"
+				<listbox id="box" multiple="true" rows="7"
 					model="@{win$composer.allVehiculos, load-after='delete.onClick'}"
 					selectedItem="@{win$composer.datove}" vflex="true">
 					<listhead>
-						<listheader label="N_matricula" width="90px" />
+						<listheader label="N_matricula" width="90px"	/>
 						<listheader label="Marca" width="90px" />
 						<listheader label="Modelo" width="90px" />
 						<listheader label="Descripcion" width="200px" />
@@ -36,38 +75,6 @@
 				<space />
 			</panelchildren>
 		</panel>
-		<panel id="panel2" title="Informacion de usuario a eliminar"
-			framable="true" width="100%" maximizable="true" minimizable="false"
-			border="normal" collapsible="true" closable="false"
-			onClose='alert("Panel is closed");'
-			onMinimize='alert("Panel is minimized");'>
-			<panelchildren>
-				<groupbox>
-					<n:br />
-					<caption label="Datos..." />
-					Numero de Placa: XXX####
-					<n:br />
-					<textbox id="n_matricula" cols="25"
-						value="@{win$composer.datove.n_matricula}" readonly="true" />
-					<n:br />
-					Marca: XXXXXXXXX
-					<n:br />
-					<textbox id="marca" cols="25"
-						value="@{win$composer.datove.marca}" readonly="true" />
-					<n:br />
-					Modelo: XXXXXXX
-					<n:br />
-					<textbox id="modelo" cols="25"
-						value="@{win$composer.datove.modelo}" readonly="true" />
-					<n:br />
-					Descripcion: XXXXXXXXXX
-					<n:br />
-					<textbox id="descripcion" cols="25"
-						value="@{win$composer.datove.descripcion}" readonly="true" />
-					<n:br />
-					<n:br />
-				</groupbox>
-			</panelchildren>
-		</panel>
+		</hbox>
 	</window>
 </zk>

@@ -20,9 +20,9 @@ public class AdministradorController extends GenericForwardComposer{
 	public List getAllAdministradores(){
 		return admdao.findAll();
 	}
-	public List getAllGSS(){
-		return admdao.findAllGS();
-	}
+//	public List getAllGSS(){
+//		return admdao.findAllGS();
+//	}
 	
 	public void onClick$add() {		
 		DatoAdministrador newAdm = new DatoAdministrador(current.getN_cedula_admi(), current.getId_cargo(), 

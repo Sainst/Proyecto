@@ -56,6 +56,37 @@ public class Frecuence {
 		}		
 		return allFrecuences;
 	}
+	public boolean delete(DatoFrecuence frc){
+		Connection conn = null;
+		Statement stmt = null;
+		boolean result = false;
+		try {
+			// get connection
+			conn = DriverManager.getConnection(url, user, pwd);
+			stmt = conn.createStatement();
+			if (stmt.executeUpdate(
+					"delete from pagos where id_pago = '" + frc.getId_pago() + 
+					"'") > 0);
+			result = true;
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return result;
+	}
+	
 	public boolean insert(DatoFrecuence frc){
 		Connection conn = null;
 		Statement stmt = null;
