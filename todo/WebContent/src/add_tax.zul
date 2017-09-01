@@ -2,14 +2,14 @@
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
 <zk xmlns:n="http://www.w3.org/1999/xhtml">
 	<window id="win" title=".............." width="100%" border="normal"
-		apply="Controlador.EventController">
+		apply="Controlador.EventController, Controlador.VehiculoController">
 		<menubar id="Menu">
-			<menuitem id="add" label="Agregar..." image="/img/Add.png"
+			<menuitem id="add" label="Agregar..." image="img/Add.png"
 				onClick="alert(self.label)"><attribute name="onClick"><![CDATA[
     Messagebox.show("Se ha registrado un nuevo Taxista...", "Information", Messagebox.OK, Messagebox.INFORMATION);
 ]]></attribute></menuitem>
 				<menuitem id="volverw" label="volver..." href="index.zul"
-				image="/img/oper.png" onClick="alert(self.label)" />
+				image="img/oper.png" onClick="alert(self.label)" />
 				</menubar>
 		<panel id="panel" title="Agregar Nuevo Usuario..."
 			framable="true" width="100%" maximizable="true" minimizable="false"
@@ -114,5 +114,6 @@
 				</listbox>
 			</panelchildren>
 		</panel>
+
 	</window>
 </zk>

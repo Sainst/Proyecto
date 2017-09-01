@@ -4,12 +4,12 @@
 	<window id="win" title=".............." width="100%" border="normal"
 		apply="Controlador.EventController">
 		<menubar id="Menu">
-			<menuitem id="delete" label="Eliminar..." image="/img/Del.png"
+			<menuitem id="delete" label="Eliminar..." image="img/Del.png"
 				onClick="alert(self.label)"><attribute name="onClick"><![CDATA[
     Messagebox.show("Se ha eliminado el usuario...", "Information", Messagebox.OK, Messagebox.INFORMATION);
 ]]></attribute></menuitem>
 				<menuitem id="volverw" label="volver..." href="index.zul"
-				image="/img/oper.png" onClick="alert(self.label)" />
+				image="img/oper.png" onClick="alert(self.label)" />
 				</menubar>
 		<panel id="panel" title="Eliminar Usuarios..." framable="true"
 			width="100%" maximizable="true" minimizable="false" border="normal"

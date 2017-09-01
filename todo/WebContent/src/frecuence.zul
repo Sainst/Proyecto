@@ -1,24 +1,23 @@
 <?page title="Registro"?>
 <?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"?>
 <zk xmlns:n="http://www.w3.org/1999/xhtml">
-	<space />
 	<window id="win" title="..............." width="100%"
 		border="normal" apply="Controlador.FrecuenceController">
 		<menubar id="Menu">
-			<menuitem id="add" label="Agregar..." image="/img/Add.png"
+			<menuitem id="add" label="Agregar..." image="img/Add.png"
 				onClick="alert(self.label)"><attribute name="onClick"><![CDATA[
     Messagebox.show("Se ha registrado un nuevo Pago...", "Information", Messagebox.OK, Messagebox.INFORMATION);
 ]]></attribute></menuitem>
 				<menuitem id="update" label="Actualizar..."
-				image="/img/Edit.png" onClick="alert(self.label)"><attribute name="onClick"><![CDATA[
+				image="img/Edit.png" onClick="alert(self.label)"><attribute name="onClick"><![CDATA[
     Messagebox.show("Se ha actualizado este Pago...", "Information", Messagebox.OK, Messagebox.INFORMATION);
 ]]></attribute></menuitem>
-				<menuitem id="delete" label="Eliminar..." image="/img/Del.png"
+				<menuitem id="delete" label="Eliminar..." image="img/Del.png"
 				onClick="alert(self.label)"><attribute name="onClick"><![CDATA[
     Messagebox.show("Se ha eliminado el pago...", "Information", Messagebox.OK, Messagebox.INFORMATION);
 ]]></attribute></menuitem>
 				<menuitem id="volverw" label="volver..." href="index.zul"
-				image="/img/oper.png" onClick="alert(self.label)" />
+				image="img/oper.png" onClick="alert(self.label)" />
 				</menubar>
 		<panel id="panel" title="Cancelar Pago..." framable="true"
 			width="100%" maximizable="true" minimizable="false" border="normal"

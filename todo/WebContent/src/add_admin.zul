@@ -4,14 +4,14 @@
 	<window id="win" title=".............." width="100%" border="normal"
 		apply="Controlador.AdministradorController">
 		<menubar id="Menu">
-			<menuitem id="add" label="Agregar..." image="/img/Add.png"
+			<menuitem id="add" label="Agregar..." image="img/Add.png"
 				onClick="alert(self.label)"><attribute name="onClick"><![CDATA[
     Messagebox.show("Se ha registrado un nuevo miembro del personal...", "Information", Messagebox.OK, Messagebox.INFORMATION);
 ]]></attribute></menuitem>
-				<menuitem label="Estados..." disabled = "true" image="/img/states.png" onClick="alert(self.label)" href=""/>
-			<menuitem label="Tipos..." disabled = "true" image="/img/typeadd.png" onClick="alert(self.label)" href=""/>
+				<menuitem label="Estados..." disabled = "true" image="img/states.png" onClick="alert(self.label)" href=""/>
+			<menuitem label="Tipos..." disabled = "true" image="img/typeadd.png" onClick="alert(self.label)" href=""/>
 				<menuitem id="volverw" label="volver..." href="index.zul"
-				image="/img/oper.png" onClick="alert(self.label)" />
+				image="img/oper.png" onClick="alert(self.label)" />
 			
 		</menubar>
 			

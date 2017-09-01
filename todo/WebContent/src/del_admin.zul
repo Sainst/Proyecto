@@ -5,11 +5,11 @@
 		apply="Controlador.AdministradorController">
 		<menubar id="Menu">
 			<menuitem id="delete" label="Eliminar..."
-				image="/img/Del.png" onClick="alert(self.label)"><attribute name="onClick"><![CDATA[
+				image="img/Del.png" onClick="alert(self.label)"><attribute name="onClick"><![CDATA[
     Messagebox.show("Se ha eliminado el usuario...", "Information", Messagebox.OK, Messagebox.INFORMATION);
 ]]></attribute></menuitem>
 				<menuitem id="volverw" label="volver..." href="index.zul"
-				image="/img/oper.png" onClick="alert(self.label)" />
+				image="img/oper.png" onClick="alert(self.label)" />
 				</menubar>
 				<panel id="panel" title="Admisnitracion..." framable="true"
 			width="100%" maximizable="false" minimizable="false" border="normal"

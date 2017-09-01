@@ -4,48 +4,48 @@
 	<window id="win" title="Marco de Opciones..." width="100%"
 		height="90%" border="normal">
 		<menubar id="Menu">
-			<menu label="Menu" image="/img/main.png">
+			<menu label="Menu" image="img/main.png">
 				<menupopup>
 					<menu label="Agregar Nuevo..."
-						image="/img/Add.png">
+						image="img/Add.png">
 						<menupopup>
 							<menuitem label="Taxista..."
 								onClick="alert(self.label)" href="add_tax.zul"
-								image="/img/user.png" />
+								image="img/user.png" />
 							<menuitem label="Personal..." disabled="false"
 								onClick="alert(self.label)" href="add_admin.zul"
-								image="/img/secre.png" />
+								image="img/secre.png" />
 							<menuitem label="Vehiculo..."
 								onClick="alert(self.label)" href="add_vehiculo.zul"
-								image="/img/Del.png" />
+								image="img/Del.png" />
 							<menuseparator></menuseparator>
 						</menupopup>
 					</menu>
-					<menu label="Actualizar registro..." image="/img/Edit.png">
+					<menu label="Actualizar registro..." image="img/Edit.png">
 						<menupopup>
 							<menuitem label="Taxista..."
 								onClick="alert(self.label)" href="edit_tax.zul"
-								image="/img/user.png" />
+								image="img/user.png" />
 							<menuitem label="Personal..."
 								disabled="false" onClick="alert(self.label)"
-								href="edit_admin.zul" image="/img/secre.png" />
+								href="edit_admin.zul" image="img/secre.png" />
 							<menuitem label="Vehiculo..."
 								onClick="alert(self.label)" href="edit_vehiculol.zul"
-								image="/img/Del.png" />
+								image="img/Del.png" />
 							<menuseparator></menuseparator>
 						</menupopup>
 					</menu>
-					<menu label="ELiminar registro..." image="/img/delete.png">
+					<menu label="ELiminar registro..." image="img/delete.png">
 						<menupopup>
 							<menuitem label="Taxista..."
 								onClick="alert(self.label)" href="del_tax.zul"
-								image="/img/user.png" />
+								image="img/user.png" />
 							<menuitem label="Personal..."
 								disabled="false" href="del_admin.zul" onClick="alert(self.label)"
-								image="/img/secre.png" />
+								image="img/secre.png" />
 							<menuitem label="Vehiculo..."
 								onClick="alert(self.label)" href="del_vehiculol.zul"
-								disabled="false" image="/img/Del.png" />
+								disabled="false" image="img/Del.png" />
 							<menuseparator></menuseparator>
 						</menupopup>
 					</menu>
@@ -54,9 +54,9 @@
 			</menu>
 
 			<menuitem label="Frecuencia..." href="frecuence.zul"
-				image="/img/freq.png" onClick="alert(self.label)" />
+				image="img/freq.png" onClick="alert(self.label)" />
 			<menuitem label="Salir..." href="login.html"
-				image="/img/lol.png" onClick="alert(self.label)" />
+				image="img/lol.png" onClick="alert(self.label)" />
 		</menubar>
 		<iframe id="iframe" src="view_taxista.zul" width="100%"
 			height="160px" style="border: 0px solid gray" />
