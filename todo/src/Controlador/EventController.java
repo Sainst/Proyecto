@@ -1,11 +1,5 @@
 package Controlador;
 
-/**
- * Event Controller.
- * 
- * @author robbiecheng
- */
-
 import java.util.*;
 //import java.util.UUID;
 import org.zkoss.zk.ui.util.GenericForwardComposer;

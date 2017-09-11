@@ -1,11 +1,5 @@
 package Controlador;
 
-/**
- * Event DAO.
- * 
- * @author robbiecheng
- */
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;

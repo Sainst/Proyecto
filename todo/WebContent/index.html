@@ -8,12 +8,14 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 <title>INICIO</title>
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<link
+	href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext'
+	rel='stylesheet' type='text/css'>
 <!-- Load css styles -->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
+<link rel="stylesheet" type="text/css"
+	href="css/bootstrap-responsive.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link rel="stylesheet" type="text/css" href="css/pluton.css" />
 <link rel="stylesheet" type="text/css" href="css/jquery.cslider.css" />
@@ -81,8 +83,7 @@
 					<a href="/todo/src/login.html" class="da-link button">Iniciar
 						Sesion...</a>
 					<div class="da-img">
-						<img src="/todo/src/img/taxon.jpg"
-							alt="image01" width="320">
+						<img src="/todo/src/img/taxon.jpg" alt="image01" width="320">
 					</div>
 				</div>
 				<!-- End first slide -->
@@ -97,9 +98,7 @@
 					<a href="/todo/src/public_view.zul" class="da-link button">Vista
 						Pagos - Taxistas</a>
 					<div class="da-img">
-						<img
-							src="/todo/src/img/taxth.jpg"
-							width="320" alt="image02">
+						<img src="/todo/src/img/taxth.jpg" width="320" alt="image02">
 					</div>
 					<div class="da-arrows">
 						<span class="da-arrows-prev"></span> <span class="da-arrows-next"></span>
@@ -113,8 +112,7 @@
 	<!-- Load Facebook SDK for JavaScript -->
 	<!-- Service section start -->
 	<div class="section primary-section" id="service">
-		</br>
-		</br>
+		</br> </br>
 		<div class="container">
 			<!-- Start title section -->
 			<div class="title">
@@ -128,8 +126,7 @@
 				<div class="span4">
 					<div class="centered service">
 						<div class="circle-border zoom-in">
-							<img class="img-circle"
-								src="/todo/src/img/taxon.jpg"
+							<img class="img-circle" src="/todo/src/img/taxon.jpg"
 								alt="service 1">
 						</div>
 						<h3>Diseño moderno</h3>
@@ -139,8 +136,7 @@
 				<div class="span4">
 					<div class="centered service">
 						<div class="circle-border zoom-in">
-							<img class="img-circle"
-								src="/todo/src/img/taxth.jpg"
+							<img class="img-circle" src="/todo/src/img/taxth.jpg"
 								alt="service 2" />
 						</div>
 						<h3>Servivio las 24 horas del dia</h3>
@@ -151,8 +147,7 @@
 				<div class="span4">
 					<div class="centered service">
 						<div class="circle-border zoom-in">
-							<img class="img-circle"
-								src="/todo/src/img/taxfo.jpg"
+							<img class="img-circle" src="/todo/src/img/taxfo.jpg"
 								alt="service 3">
 						</div>
 						<h3>Seguridad</h3>
@@ -207,9 +202,9 @@
 	<div class="footer">
 		<footer id="pie">
 			<center>
-				<img id="image" src="/todo/src/img/logo_uleam.png" width=5% /> &#169;
-				Copyright 2017, "PremiumCar" - Derechos Reservados (Carreño Lucas
-				Sergio - Mecias Chica Kevin - Ingenieria en Software) <img
+				<img id="image" src="/todo/src/img/logo_uleam.png" width=5% />
+				&#169; Copyright 2017, "PremiumCar" - Derechos Reservados (Carreño
+				Lucas Sergio - Mecias Chica Kevin - Ingenieria en Software) <img
 					id="image" src="/todo/src/img/logo_facci.png" width=13% />
 			</center>
 			</center>
@@ -221,7 +216,6 @@
 		<a href="#"> <i class="icon-up-open"></i>
 		</a>
 	</div>
-
 	<!-- ScrollUp button end -->
 	<!-- Include javascript -->
 	<script src="js/jquery.js"></script>
@@ -239,8 +233,6 @@
 				history.pushState("jibberish", null, null);
 				window.onpopstate = function() {
 					history.pushState('newjibberish', null, null);
-					// Handle the back (or forward) buttons here
-					// Will NOT handle refresh, use onbeforeunload for this.
 				};
 			} else {
 				var ignoreHashChange = true;
@@ -248,10 +240,6 @@
 					if (!ignoreHashChange) {
 						ignoreHashChange = true;
 						window.location.hash = Math.random();
-						// Detect and redirect change here
-						// Works in older FF and IE9
-						// * it does mess with your hash symbol (anchor?) pound sign
-						// delimiter on the end of the URL
 					} else {
 						ignoreHashChange = false;
 					}

@@ -1,9 +1,5 @@
 package Modelo;
 
-/* Event.
- * @author Derechos_de_autor_reservados...
- */
-
 //import java.util.Date;
 
 public class TodoEvent {
